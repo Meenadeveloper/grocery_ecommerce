@@ -77,12 +77,12 @@ const CartDropdown: React.FC = () => {
           </div>
 
           <div className="button-wrapper d-flex align-items-center justify-content-between">
-            <Link href="/cart" className="rts-btn btn-primary">
+            <a href="/cart" className="rts-btn btn-primary">
               View Cart
-            </Link>
-            <Link href="/checkout" className="rts-btn btn-primary border-only">
+            </a>
+            <a href="/checkout" className="rts-btn btn-primary border-only">
               CheckOut
-            </Link>
+            </a>
           </div>
         </div>
       </div>

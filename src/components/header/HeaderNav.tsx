@@ -176,7 +176,7 @@ function ComponentName() {
                                             <i className="fa-light fa-user" />
                                             Account
                                         </a>
-                                        <a href="wishlist" className="btn-border-only wishlist">
+                                        <a href="/wishlist" className="btn-border-only wishlist">
                                             <i className="fa-regular fa-heart" />
                                             Wishlist
                                         </a>
@@ -274,11 +274,11 @@ function ComponentName() {
                                                         </p>
                                                     </div>
                                                     <div className="button-wrapper d-flex align-items-center justify-content-between">
-                                                        <a href="cart" className="rts-btn btn-primary ">
+                                                        <a href="/cart" className="rts-btn btn-primary ">
                                                             View Cart
                                                         </a>
                                                         <a
-                                                            href="checkout"
+                                                            href="/checkout"
                                                             className="rts-btn btn-primary border-only"
                                                         >
                                                             CheckOut
@@ -286,7 +286,7 @@ function ComponentName() {
                                                     </div>
                                                 </div>
                                             </div>
-                                            <a href="cart" className="over_link" />
+                                            <a href="/cart" className="over_link" />
                                         </div>
                                     </div>
                                     <div className="actions-area">
