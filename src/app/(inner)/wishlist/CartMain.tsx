@@ -1,6 +1,11 @@
 'use client';
 import React, { useState, useEffect } from 'react';
 import { useWishlist } from '@/components/header/WishlistContext';
+import { useCart } from "@/components/header/CartContext";
+
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 const CartMain = () => {
   const { wishlistItems, removeFromWishlist, updateItemQuantity } = useWishlist();
@@ -44,18 +49,22 @@ const CartMain = () => {
 
   const finalTotal = subtotal - subtotal * discount;
 
-  // const { addToCart } = useWishlist();
-  // const handleAdd = () => {
-  //   addToCart({
-  //     id: Date.now(),
-  //     image: {item.image},
-  //     title: {item.title},
-  //     price: ${item.price.toFixed(2)},
-  //     quantity: 1,
-  //     active: true,
-  //   });
-  //   setAdded(true);
-  // };
+
+
+
+    // add to cart to page
+    const { addToCart } = useCart();
+    const handleAdd = (item: any) => {
+        addToCart({
+            id: Date.now(),
+            image: item.image,
+            title: item.name ?? 'Default Product Title',
+            price: parseFloat(item.price ?? '0'),
+            quantity: 1,
+            active: true,
+        });
+    };
+    const addcart = () => toast('Successfully Add To Cart!');
 
 
   return (
@@ -125,6 +134,11 @@ const CartMain = () => {
                   <div className="subtotal"><p>${(item.price * item.quantity).toFixed(2)}</p></div>
                   <div className="button-area">
                     <a href="#" className="rts-btn btn-primary radious-sm with-icon"
+                     onClick={e => {
+                                        e.preventDefault();
+                                        handleAdd(item);
+                                        addcart();
+                                    }}
 
                     >
                       <div className="btn-text">Add to Cart</div>

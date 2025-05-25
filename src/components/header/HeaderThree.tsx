@@ -7,7 +7,7 @@ import Cart from './Cart';
 import WishList from './WishList';
 import BackToTop from "@/components/common/BackToTop";
 import Sidebar from './Sidebar';
-import { useCompare } from '@/components/header/CompareContext'; 
+import { useCompare } from '@/components/header/CompareContext';
 import { useRouter } from 'next/navigation';
 
 function HeaderThree() {
@@ -90,16 +90,16 @@ function HeaderThree() {
 
 
 
-    
-      const handleMenuClick = () => {
-    const sidebar = document.querySelector('.side-bar.header-two');
-    if (sidebar) {
-      sidebar.classList.toggle('show');
-    }
-  };
+
+    const handleMenuClick = () => {
+        const sidebar = document.querySelector('.side-bar.header-two');
+        if (sidebar) {
+            sidebar.classList.toggle('show');
+        }
+    };
 
 
-  
+
     const handleSearchOpen = () => {
         const sidebar = document.querySelector('.search-input-area');
         if (sidebar) {
@@ -242,53 +242,53 @@ function HeaderThree() {
                                                 <CategoryMenu />
                                             </div>
                                             <form onSubmit={handleSubmit} className="search-header" autoComplete="off">
-                                            <input
-                                                ref={inputRef}
-                                                type="text"
-                                                placeholder="Search for products, categories or brands"
-                                                required
-                                                value={searchTerm}
-                                                onChange={(e) => setSearchTerm(e.target.value)}
-                                                onFocus={() => searchTerm.length > 0 && setShowSuggestions(true)}
-                                            />
-                                            <button type="submit" className="rts-btn btn-primary radious-sm with-icon">
-                                                <div className="btn-text">Search</div>
-                                                <div className="arrow-icon">
-                                                    <i className="fa-light fa-magnifying-glass" />
-                                                </div>
-                                            </button>
+                                                <input
+                                                    ref={inputRef}
+                                                    type="text"
+                                                    placeholder="Search for products, categories or brands"
+                                                    required
+                                                    value={searchTerm}
+                                                    onChange={(e) => setSearchTerm(e.target.value)}
+                                                    onFocus={() => searchTerm.length > 0 && setShowSuggestions(true)}
+                                                />
+                                                <button type="submit" className="rts-btn btn-primary radious-sm with-icon">
+                                                    <div className="btn-text">Search</div>
+                                                    <div className="arrow-icon">
+                                                        <i className="fa-light fa-magnifying-glass" />
+                                                    </div>
+                                                </button>
 
-                                            {/* Autocomplete dropdown */}
-                                            {showSuggestions && suggestions.length > 0 && (
-                                                <ul className="autocomplete-suggestions" style={{
-                                                    position: 'absolute',
-                                                    backgroundColor: '#fff',
-                                                    border: '1px solid #ccc',
-                                                    marginTop: '4px',
-                                                    width: '100%',
-                                                    maxHeight: '200px',
-                                                    overflowY: 'auto',
-                                                    zIndex: 1000,
-                                                    listStyleType: 'none',
-                                                    padding: 0,
-                                                    borderRadius: '4px',
-                                                }}>
-                                                    {suggestions.map((suggestion, index) => (
-                                                        <li
-                                                            key={index}
-                                                            onClick={() => handleSuggestionClick(suggestion)}
-                                                            style={{
-                                                                padding: '8px 12px',
-                                                                cursor: 'pointer',
-                                                            }}
-                                                            onMouseDown={(e) => e.preventDefault()} // prevent input blur
-                                                        >
-                                                            {suggestion}
-                                                        </li>
-                                                    ))}
-                                                </ul>
-                                            )}
-                                        </form>
+                                                {/* Autocomplete dropdown */}
+                                                {showSuggestions && suggestions.length > 0 && (
+                                                    <ul className="autocomplete-suggestions" style={{
+                                                        position: 'absolute',
+                                                        backgroundColor: '#fff',
+                                                        border: '1px solid #ccc',
+                                                        marginTop: '4px',
+                                                        width: '100%',
+                                                        maxHeight: '200px',
+                                                        overflowY: 'auto',
+                                                        zIndex: 1000,
+                                                        listStyleType: 'none',
+                                                        padding: 0,
+                                                        borderRadius: '4px',
+                                                    }}>
+                                                        {suggestions.map((suggestion, index) => (
+                                                            <li
+                                                                key={index}
+                                                                onClick={() => handleSuggestionClick(suggestion)}
+                                                                style={{
+                                                                    padding: '8px 12px',
+                                                                    cursor: 'pointer',
+                                                                }}
+                                                                onMouseDown={(e) => e.preventDefault()} // prevent input blur
+                                                            >
+                                                                {suggestion}
+                                                            </li>
+                                                        ))}
+                                                    </ul>
+                                                )}
+                                            </form>
                                         </div>
                                         <div className="accont-wishlist-cart-area-header">
                                             <a href="/account" className="btn-border-only account">
@@ -299,8 +299,8 @@ function HeaderThree() {
                                                 <i className="fa-regular fa-code-compare"></i>
                                                 <span className="number">{compareItems.length}</span>
                                             </a>
-                                            <WishList/>
-                                            <Cart/>
+                                            <WishList />
+                                            <Cart />
                                         </div>
                                     </div>
                                 </div>
@@ -583,8 +583,8 @@ function HeaderThree() {
                 </header>
                 {/* header style two end */}
             </>
-<BackToTop />
-<Sidebar/>
+            <BackToTop />
+            <Sidebar />
         </div>
     )
 }

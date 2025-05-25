@@ -5,6 +5,9 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useWishlist } from './WishlistContext';
+import { useCart } from "@/components/header/CartContext";
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const WishList: React.FC = () => {
     const { wishlistItems, removeFromWishlist } = useWishlist();
@@ -12,6 +15,9 @@ const WishList: React.FC = () => {
     const total = wishlistItems.reduce((sum, item) => sum + item.price * item.quantity, 0);
     const freeShippingThreshold = 125;
     const remaining = freeShippingThreshold - total;
+
+
+
 
     return (
         <div className="btn-border-only cart category-hover-header">
