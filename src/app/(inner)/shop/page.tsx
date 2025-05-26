@@ -18,21 +18,142 @@ interface PostType {
 }
 
 export default function Home() {
-
   const [activeTab, setActiveTab] = useState<string>('tab1');
   const searchParams = useSearchParams();
   const searchQuery = searchParams.get('search')?.toLowerCase() || '';
 
-  const desiredIndices = [1, 3, 4, 5, 6, 7, 8, 9, 10, 12, 16, 15, 1, 2, 3];
-  const filteredProducts: PostType[] = desiredIndices
-    .map(index => Product[index])
-    .filter(Boolean)
-    .filter((product) => {
+  const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
+  const [selectedBrands, setSelectedBrands] = useState<string[]>([]);  // <-- new state for brands
+
+  // New state for price filter
+  const [minPrice, setMinPrice] = useState<number>(0);
+  const [maxPrice, setMaxPrice] = useState<number>(150);
+
+  const allCategories = ["Beverages", "Biscuits & Snacks", "Breads & Bakery"];
+  const allBrands = ["Frito Lay", "Nespresso", "Oreo", "Quaker", "Welch's"];
+
+  // Category -> product indices
+  const categoryProductIndices: { [key: string]: number[] } = {
+    "Beverages": [1, 3, 4, 5, 6, 7],
+    "Biscuits & Snacks": [8, 9, 10, 12, 16],
+    "Breads & Bakery": [15, 1, 2, 3],
+  };
+
+  // Brand -> product indices
+  const brandProductIndices: { [key: string]: number[] } = {
+    "Frito Lay": [1, 3, 4],
+    "Nespresso": [3, 1, 4],
+    "Oreo": [8, 9, 10],
+    "Quaker": [3, 4, 10],
+    "Welch's": [8, 9, 1],
+  };
+
+  const handleCategoryChange = (category: string) => {
+    setSelectedCategories(prev =>
+      prev.includes(category)
+        ? prev.filter(cat => cat !== category)
+        : [...prev, category]
+    );
+  };
+
+  const handleBrandChange = (brand: string) => {
+    setSelectedBrands(prev =>
+      prev.includes(brand)
+        ? prev.filter(b => b !== brand)
+        : [...prev, brand]
+    );
+  };
+
+  // Price inputs handlers
+  const handleMinPriceChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const val = parseFloat(e.target.value);
+    if (!isNaN(val)) setMinPrice(val);
+  };
+  const handleMaxPriceChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const val = parseFloat(e.target.value);
+    if (!isNaN(val)) setMaxPrice(val);
+  };
+
+  // Filter products by selected categories
+  const getFilteredByCategoryProducts = (): PostType[] => {
+    if (selectedCategories.length === 0) {
+      const allIndices = Object.values(categoryProductIndices).flat();
+      const uniqueIndices = Array.from(new Set(allIndices));
+      return uniqueIndices.map(i => Product[i]).filter(Boolean);
+    }
+
+    const selectedIndices = selectedCategories
+      .map(cat => categoryProductIndices[cat] || [])
+      .flat();
+    const uniqueSelectedIndices = Array.from(new Set(selectedIndices));
+    return uniqueSelectedIndices.map(i => Product[i]).filter(Boolean);
+  };
+
+  // Filter products by selected brands
+  const getFilteredByBrandProducts = (): PostType[] => {
+    if (selectedBrands.length === 0) {
+      // No brand filter, return all products from Product.json
+      return Product;
+    }
+
+    const selectedIndices = selectedBrands
+      .map(brand => brandProductIndices[brand] || [])
+      .flat();
+    const uniqueSelectedIndices = Array.from(new Set(selectedIndices));
+    return uniqueSelectedIndices.map(i => Product[i]).filter(Boolean);
+  };
+
+  // Combine category and brand filters (intersection)
+  const productsByCategory = getFilteredByCategoryProducts();
+  const productsByBrand = getFilteredByBrandProducts();
+
+  // Intersection by slug (or index) of category and brand filtered products
+  const categorySlugs = new Set(productsByCategory.map(p => p.slug));
+  const brandSlugs = new Set(productsByBrand.map(p => p.slug));
+
+  // Only keep products that exist in both sets if both filters applied
+  let combinedFilteredProducts = [];
+
+  if (selectedCategories.length > 0 && selectedBrands.length > 0) {
+    combinedFilteredProducts = productsByCategory.filter(p => brandSlugs.has(p.slug));
+  } else if (selectedCategories.length > 0) {
+    combinedFilteredProducts = productsByCategory;
+  } else if (selectedBrands.length > 0) {
+    combinedFilteredProducts = productsByBrand;
+  } else {
+    // If no filters, show all products (unique combined category indices to be consistent)
+    const allIndices = Object.values(categoryProductIndices).flat();
+    const uniqueIndices = Array.from(new Set(allIndices));
+    combinedFilteredProducts = uniqueIndices.map(i => Product[i]).filter(Boolean);
+  }
+
+  const filteredProducts: PostType[] = combinedFilteredProducts
+    .filter(product => {
+      // Price convert string to number, jodi na paoa jai tahole 0 dhore neben
+      const productPrice = product.price ? parseFloat(product.price) : 0;
+
+      // Price filter apply
+      if (productPrice < minPrice || productPrice > maxPrice) {
+        return false;
+      }
+
+      // Search filter
       if (!searchQuery) return true;
       const title = product.title?.toLowerCase() || '';
       const category = product.category?.toLowerCase() || '';
       return title.includes(searchQuery) || category.includes(searchQuery);
     });
+
+  // Handle price filter form submit to prevent page reload
+  const handlePriceFilterSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    // Just filtering happens dynamically because state changes already filter products
+    // No extra action needed here
+  };
+
+
+
+
 
   return (
     <div className="shop-page">
@@ -62,41 +183,75 @@ export default function Home() {
       <div className="shop-grid-sidebar-area rts-section-gap">
         <div className="container">
           <div className="row g-0">
+
             {/* Sidebar */}
             <div className="col-xl-3 col-lg-12 pr--70 pr_lg--10 pr_sm--10 pr_md--5 rts-sticky-column-item">
               <div className="sidebar-filter-main theiaStickySidebar">
+
                 {/* Price Filter */}
                 <div className="single-filter-box">
                   <h5 className="title">Widget Price Filter</h5>
                   <div className="filterbox-body">
-                    <form action="#" className="price-input-area">
+                    <form
+                      action="#"
+                      className="price-input-area"
+                      onSubmit={handlePriceFilterSubmit}
+                    >
                       <div className="half-input-wrapper">
                         <div className="single">
                           <label htmlFor="min">Min price</label>
-                          <input id="min" type="text" defaultValue={0} />
+                          <input
+                            id="min"
+                            type="number"
+                            value={minPrice}
+                            min={0}
+                            onChange={handleMinPriceChange}
+                          />
                         </div>
                         <div className="single">
                           <label htmlFor="max">Max price</label>
-                          <input id="max" type="text" defaultValue={150} />
+                          <input
+                            id="max"
+                            type="number"
+                            value={maxPrice}
+                            min={0}
+                            onChange={handleMaxPriceChange}
+                          />
                         </div>
                       </div>
-                      <input type="range" className="range" />
+                      <input
+                        type="range"
+                        className="range"
+                        min={0}
+                        max={150}
+                        value={maxPrice}
+                        onChange={(e) => setMaxPrice(parseInt(e.target.value, 10))}
+                      />
                       <div className="filter-value-min-max">
-                        <span>Price: $10 — $90</span>
-                        <button className="rts-btn btn-primary">Filter</button>
+                        <span>
+                          Price: ${minPrice} — ${maxPrice}
+                        </span>
+                        <button type="submit" className="rts-btn btn-primary">
+                          Filter
+                        </button>
                       </div>
                     </form>
                   </div>
                 </div>
 
-                {/* Categories */}
+                {/* Categories (Interactive) */}
                 <div className="single-filter-box">
                   <h5 className="title">Product Categories</h5>
                   <div className="filterbox-body">
                     <div className="category-wrapper ">
-                      {["Beverages", "Biscuits & Snacks", "Breads & Bakery", "Breakfast & Dairy", "Grocery & Staples", "Fruits & Vegetables", "Household Needs", "Meats & Seafood", "Grocery & Staples"].map((cat, i) => (
+                      {allCategories.map((cat, i) => (
                         <div className="single-category" key={i}>
-                          <input id={`cat${i + 1}`} type="checkbox" />
+                          <input
+                            id={`cat${i + 1}`}
+                            type="checkbox"
+                            checked={selectedCategories.includes(cat)}
+                            onChange={() => handleCategoryChange(cat)}
+                          />
                           <label htmlFor={`cat${i + 1}`}>{cat}</label>
                         </div>
                       ))}
@@ -104,32 +259,21 @@ export default function Home() {
                   </div>
                 </div>
 
-                {/* Status */}
-                <div className="single-filter-box">
-                  <h5 className="title">Product Status</h5>
-                  <div className="filterbox-body">
-                    <div className="category-wrapper">
-                      <div className="single-category">
-                        <input id="cat11" type="checkbox" />
-                        <label htmlFor="cat11">In Stock</label>
-                      </div>
-                      <div className="single-category">
-                        <input id="cat12" type="checkbox" />
-                        <label htmlFor="cat12">On Sale</label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
 
                 {/* Brands */}
                 <div className="single-filter-box">
                   <h5 className="title">Select Brands</h5>
                   <div className="filterbox-body">
                     <div className="category-wrapper">
-                      {["Frito Lay", "Nespresso", "Oreo", "Quaker", "Welch's"].map((brand, i) => (
+                      {allBrands.map((brand, i) => (
                         <div className="single-category" key={i}>
-                          <input id={`cat${13 + i}`} type="checkbox" />
-                          <label htmlFor={`cat${13 + i}`}>{brand}</label>
+                          <input
+                            id={`brand${i + 1}`}
+                            type="checkbox"
+                            checked={selectedBrands.includes(brand)}
+                            onChange={() => handleBrandChange(brand)}
+                          />
+                          <label htmlFor={`brand${i + 1}`}>{brand}</label>
                         </div>
                       ))}
                     </div>
@@ -178,25 +322,8 @@ export default function Home() {
                   </div>
                 </div>
 
-                <div className="nice-select-area-wrapper-and-button">
-                  <div className="nice-select-wrapper-1">
-                    {["All Categories", "All Brands", "All Size", "All Weight"].map((text, i) => (
-                      <div className="single-select" key={i}>
-                        <select>
-                          <option data-display={text}>{text}</option>
-                          <option value={1}>Some option</option>
-                          <option value={2}>Another option</option>
-                          <option value={3}>A disabled option</option>
-                          <option value={4}>Potato</option>
-                        </select>
-                      </div>
-                    ))}
-                  </div>
-                  <div className="button-area">
-                    <button className="rts-btn">Filter</button>
-                    <button className="rts-btn">Reset Filter</button>
-                  </div>
-                </div>
+
+
               </div>
 
               {/* Grid or List view */}
@@ -251,7 +378,6 @@ export default function Home() {
                   )}
                 </div>
               </div>
-
             </div>
           </div>
         </div>

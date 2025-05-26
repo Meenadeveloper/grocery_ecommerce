@@ -18429,7 +18429,6 @@ li.with-megamenu:hover .rts-megamenu {
   overflow: hidden;
   display: block;
   position: relative;
-  max-width: 236px;
 }
 
 .single-shopping-card-one .thumbnail-preview .badge {
@@ -22326,24 +22325,31 @@ body.modal-open {
 .single-filter-box .filterbox-body .price-input-area .range::-webkit-slider-thumb {
   -webkit-appearance: none !important;
   border-radius: 100%;
-  background-color: rgb(255, 255, 255);
+  background: rgb(255, 255, 255) !important;
   height: 10px;
   width: 10px;
   margin-top: -7px;
-  border: 1px solid transparent;
+  -webkit-appearance: none;
 }
 
 .single-filter-box .filterbox-body .price-input-area .range::-webkit-slider-thumb {
-  background-color: #aaa;
-  box-shadow: 0 0 5px rgba(7, 156, 32, 0.5);
-  height: 10px;
-  width: 10px;
-  border: 1px solid transparent;
+  background: rgb(255, 255, 255) !important;
+  background-color: rgb(255, 255, 255) !important;
+  /* box-shadow: 0 0 5px rgba(7, 156, 32, 0.5); */
+  /* height: 10px;
+  width: 10px; */
+  -webkit-appearance: none;
+  cursor: ew-resize;
+  border: 2px solid #fff;
+  height: 16px;
+  width: 16px;
+  /* padding:5px; */
+  color:#fff;
 }
 
-.single-filter-box .filterbox-body .price-input-area .range:active::-webkit-slider-thumb {
+/* .single-filter-box .filterbox-body .price-input-area .range:active::-webkit-slider-thumb {
   outline: none;
-}
+} */
 
 .single-filter-box .filterbox-body .price-input-area .filter-value-min-max {
   display: flex;
@@ -22659,6 +22665,9 @@ body.modal-open {
 
 .product-area-wrapper-shopgrid-list.with-list .single-shopping-card-one.discount-offer {
   align-items: center;
+}
+.product-area-wrapper-shopgrid-list.with-list .single-shopping-card-one.discount-offer .thumbnail-preview{
+  max-width: 238px
 }
 
 .product-area-wrapper-shopgrid-list.with-list .body-content {
@@ -24440,7 +24449,8 @@ body.modal-open {
   max-width: 60%;
   color: var(--color-heading-1);
 }
-.right-card-sidebar-checkout .single-shop-list .left-area img{
+
+.right-card-sidebar-checkout .single-shop-list .left-area img {
   max-width: 150px
 }
 
@@ -28655,8 +28665,10 @@ ul.submenu.mm-collapse.mm-show {
 .nice-select-area-wrapper-and-button .nice-select-wrapper-1 .single-select select {
   -webkit-tap-highlight-color: transparent;
   background-color: #fff;
+  -webkit-background-color: #fff;
   border-radius: 5px;
   border: solid 1px #e8e8e8;
+  -webkit-border: solid 1px #e8e8e8;
   box-sizing: border-box;
   clear: both;
   cursor: pointer;
@@ -28685,6 +28697,7 @@ ul.submenu.mm-collapse.mm-show {
   align-items: center;
   font-weight: 600;
   color: #2C3C28;
+  -webkit-color: #2C3C28;
 }
 
 .wishlist-page .bottom-cupon-code-cart-area {
@@ -28716,33 +28729,35 @@ ul.submenu.mm-collapse.mm-show {
   max-width: max-content;
 }
 
-.compare-number{
+.compare-number {
   position: relative;
 }
-.compare-number .number{
-    position: absolute;
-    left: 33px;
-    top: 2px;
-    height: 20px;
-    width: 20px;
-    background: var(--color-primary);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 12px;
-    color: #fff;
-    transition: 0.3s;
+
+.compare-number .number {
+  position: absolute;
+  left: 33px;
+  top: 2px;
+  height: 20px;
+  width: 20px;
+  background: var(--color-primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  color: #fff;
+  transition: 0.3s;
 }
 
 .Toastify__progress-bar-theme--light {
-    background: var(--color-primary) !important;
+  background: var(--color-primary) !important;
 }
-.shop-page .header-top-area .bwtween-area-header-top .countdown{
+
+.shop-page .header-top-area .bwtween-area-header-top .countdown {
   display: none;
 }
 
-.variable-product-type .single-select select{
+.variable-product-type .single-select select {
   height: 45px;
   weight: 45px;
   border-radius: 5px;
@@ -28751,17 +28766,22 @@ ul.submenu.mm-collapse.mm-show {
   font-weight: 600;
 }
 
-.no-compare-show{
+.no-compare-show {
   color: var(--color-danger);
   font-size: 24px;
 }
 
 form.contact-form-1 .single-select select {
+  height: 50px;
+  border-radius: 6px;
+  border: 1px solid #E2E2E2;
+  background: #fff;
+  padding: 15px;
+}
+select {
     height: 50px;
     border-radius: 6px;
     border: 1px solid #E2E2E2;
     background: #fff;
     padding: 15px;
 }
-
-

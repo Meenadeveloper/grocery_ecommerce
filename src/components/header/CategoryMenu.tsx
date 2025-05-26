@@ -98,7 +98,7 @@ function CategoryMenu() {
                             >
                                 {item.submenu.map((subItem, subIdx) => (
                                     <li key={subIdx}>
-                                        <a className="mobile-menu-link" href="#">
+                                        <a className="mobile-menu-link" href="/shop">
                                             {subItem}
                                         </a>
                                     </li>
