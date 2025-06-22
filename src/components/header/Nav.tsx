@@ -310,8 +310,8 @@ function NavItem() {
                             </li>
                         </ul>
                     </li>
-                    <li className="parent">
-                        <a href="/dashboard">
+                    <li className="parents">
+                        <a target='_blank' href="/dashboard">
                             Dashboard
                             <span className="badge">New</span>
                         </a>

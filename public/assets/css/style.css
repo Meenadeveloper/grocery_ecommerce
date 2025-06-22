@@ -28791,32 +28791,36 @@ select {
 li.has-dropdown .submenu li>a .badge {
   color: var(--color-primary) !important;
 }
-.rts-header-nav-area-one .nav-area ul li.parent{
-  position:relative;
+
+.rts-header-nav-area-one .nav-area ul li.parents {
+  position: relative;
 }
-.rts-header-nav-area-one .nav-area ul li.parent .badge{
-    position: absolute;
-    top: 6px;
-    right: -10px;
-    color: var(--color-primary);
-    font-size: 11px;
+
+.rts-header-nav-area-one .nav-area ul li.parents .badge {
+  position: absolute;
+  top: 6px;
+  right: -10px;
+  color: var(--color-primary);
+  font-size: 11px;
 }
 
 
 
 
 @media only screen and (max-width: 1200px) {
-  .nav-and-btn-wrapper .right-btn-area .btn-narrow{
-    display:none;
+  .nav-and-btn-wrapper .right-btn-area .btn-narrow {
+    display: none;
   }
 }
+
 @media only screen and (max-width: 1200px) {
-  .logo-search-category-wrapper .category-search-wrapper .category-btn{
-    display:none;
+  .logo-search-category-wrapper .category-search-wrapper .category-btn {
+    display: none;
   }
 }
+
 @media only screen and (max-width: 1000px) {
   .nav-and-btn-wrapper .btn-primary {
-      padding: 23px 5px;
+    padding: 23px 5px;
   }
 }
