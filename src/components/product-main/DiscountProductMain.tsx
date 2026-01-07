@@ -126,7 +126,6 @@ const BlogGridMain: React.FC<BlogGridMainProps> = ({
                     </Link>
                 </div>
 
-                <ToastContainer />
             </div>
         </>
     );

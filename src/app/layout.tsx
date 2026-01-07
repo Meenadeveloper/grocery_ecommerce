@@ -33,7 +33,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head>
         {/* 🚀 Load CSS from public folder */}
         <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
@@ -41,7 +41,7 @@ export default function RootLayout({
         <link rel="stylesheet" href="/assets/css/style.css" />
       </head>
 
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+      <body suppressHydrationWarning className={`${geistSans.variable} ${geistMono.variable}`}>
         <CompareProvider>
           <WishlistProvider>
             <CartProvider>
