@@ -1,8 +1,8 @@
 "use client";
 
-import { useState, ChangeEvent } from 'react';
-import Image from 'next/image';
-import DataTable, { TableColumn } from 'react-data-table-component';
+import { useState, ChangeEvent } from "react";
+import Image from "next/image";
+import DataTable, { TableColumn } from "react-data-table-component";
 
 interface Review {
   id: number;
@@ -14,7 +14,7 @@ interface Review {
 }
 
 const ReviewsTable = () => {
-  const [searchTerm, setSearchTerm] = useState<string>('');
+  const [searchTerm, setSearchTerm] = useState<string>("");
 
   const reviews: Review[] = [
     {
@@ -23,7 +23,7 @@ const ReviewsTable = () => {
       productNo: "#87845",
       name: "David Lion",
       rating: 5,
-      image: "/assets/images-dashboard/grocery/14.png"
+      image: "/assets/images-dashboard/grocery/14.png",
     },
     {
       id: 2,
@@ -31,7 +31,7 @@ const ReviewsTable = () => {
       productNo: "#87845",
       name: "mark Lion",
       rating: 4,
-      image: "/assets/images-dashboard/grocery/15.png"
+      image: "/assets/images-dashboard/grocery/15.png",
     },
     {
       id: 3,
@@ -39,7 +39,7 @@ const ReviewsTable = () => {
       productNo: "#87845",
       name: "Luri Lion",
       rating: 5,
-      image: "/assets/images-dashboard/grocery/17.png"
+      image: "/assets/images-dashboard/grocery/17.png",
     },
     {
       id: 4,
@@ -47,7 +47,7 @@ const ReviewsTable = () => {
       productNo: "#87845",
       name: "Pabi Lion",
       rating: 5,
-      image: "/assets/images-dashboard/grocery/18.png"
+      image: "/assets/images-dashboard/grocery/18.png",
     },
     {
       id: 5,
@@ -55,7 +55,7 @@ const ReviewsTable = () => {
       productNo: "#87845",
       name: "Matab Lion",
       rating: 5,
-      image: "/assets/images-dashboard/grocery/14.png"
+      image: "/assets/images-dashboard/grocery/14.png",
     },
     {
       id: 6,
@@ -63,7 +63,7 @@ const ReviewsTable = () => {
       productNo: "#87845",
       name: "Vagit Lion",
       rating: 5,
-      image: "/assets/images-dashboard/grocery/17.png"
+      image: "/assets/images-dashboard/grocery/17.png",
     },
     {
       id: 7,
@@ -71,7 +71,7 @@ const ReviewsTable = () => {
       productNo: "#87845",
       name: "John Mas",
       rating: 5,
-      image: "/assets/images-dashboard/grocery/15.png"
+      image: "/assets/images-dashboard/grocery/15.png",
     },
     {
       id: 8,
@@ -79,7 +79,7 @@ const ReviewsTable = () => {
       productNo: "#87845",
       name: "Tuhin Lion",
       rating: 5,
-      image: "/assets/images-dashboard/grocery/19.png"
+      image: "/assets/images-dashboard/grocery/19.png",
     },
     {
       id: 9,
@@ -87,7 +87,7 @@ const ReviewsTable = () => {
       productNo: "#87845",
       name: "Moris Less",
       rating: 5,
-      image: "/assets/images-dashboard/grocery/01.png"
+      image: "/assets/images-dashboard/grocery/01.png",
     },
     {
       id: 10,
@@ -95,7 +95,7 @@ const ReviewsTable = () => {
       productNo: "#87845",
       name: "Kabira Lion",
       rating: 5,
-      image: "/assets/images-dashboard/grocery/19.png"
+      image: "/assets/images-dashboard/grocery/19.png",
     },
     {
       id: 11,
@@ -103,7 +103,7 @@ const ReviewsTable = () => {
       productNo: "#87845",
       name: "Luthina Lion",
       rating: 5,
-      image: "/assets/images-dashboard/grocery/19.png"
+      image: "/assets/images-dashboard/grocery/19.png",
     },
     {
       id: 12,
@@ -111,67 +111,68 @@ const ReviewsTable = () => {
       productNo: "#87845",
       name: "Janvi Lion",
       rating: 5,
-      image: "/assets/images-dashboard/grocery/19.png"
-    },    
+      image: "/assets/images-dashboard/grocery/19.png",
+    },
     {
       id: 13,
       productName: "Purple Blue Gradient iPhone Case",
       productNo: "#87845",
       name: "Luhas Lion",
       rating: 5,
-      image: "/assets/images-dashboard/grocery/19.png"
-    },   
+      image: "/assets/images-dashboard/grocery/19.png",
+    },
     {
       id: 14,
       productName: "Purple Blue Gradient iPhone Case",
       productNo: "#87845",
       name: "David Lion",
       rating: 5,
-      image: "/assets/images-dashboard/grocery/19.png"
-    },    
+      image: "/assets/images-dashboard/grocery/19.png",
+    },
     {
       id: 15,
       productName: "Purple Blue Gradient iPhone Case",
       productNo: "#87845",
       name: "David Lion",
       rating: 5,
-      image: "/assets/images-dashboard/grocery/19.png"
-    },    
+      image: "/assets/images-dashboard/grocery/19.png",
+    },
     {
       id: 16,
       productName: "Purple Blue Gradient iPhone Case",
       productNo: "#87845",
       name: "David Lion",
       rating: 5,
-      image: "/assets/images-dashboard/grocery/19.png"
-    },   
+      image: "/assets/images-dashboard/grocery/19.png",
+    },
     {
       id: 17,
       productName: "Purple Blue Gradient iPhone Case",
       productNo: "#87845",
       name: "David Lion",
       rating: 5,
-      image: "/assets/images-dashboard/grocery/19.png"
-    },    
+      image: "/assets/images-dashboard/grocery/19.png",
+    },
     {
       id: 18,
       productName: "Purple Blue Gradient iPhone Case",
       productNo: "#87845",
       name: "David Lion",
       rating: 5,
-      image: "/assets/images-dashboard/grocery/19.png"
+      image: "/assets/images-dashboard/grocery/19.png",
     },
   ];
 
-  const filteredReviews = reviews.filter((review) =>
-    review.productName.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    review.productNo.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    review.name.toLowerCase().includes(searchTerm.toLowerCase())
+  const filteredReviews = reviews.filter(
+    (review) =>
+      review.productName.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      review.productNo.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      review.name.toLowerCase().includes(searchTerm.toLowerCase()),
   );
 
   const columns: TableColumn<Review>[] = [
     {
-      name: 'Product Name',
+      name: "Product Name",
       selector: (row) => row.productName,
       sortable: true,
       cell: (row) => (
@@ -186,13 +187,13 @@ const ReviewsTable = () => {
       ),
     },
     {
-      name: 'Product No',
+      name: "Product No",
       selector: (row) => row.productNo,
       sortable: true,
       cell: (row) => <p>{row.productNo}</p>,
     },
     {
-      name: 'Name',
+      name: "Name",
       selector: (row) => row.name,
       sortable: true,
       cell: (row) => (
@@ -202,7 +203,7 @@ const ReviewsTable = () => {
       ),
     },
     {
-      name: 'Rating',
+      name: "Rating",
       selector: (row) => row.rating,
       sortable: true,
       cell: (row) => (
@@ -210,7 +211,9 @@ const ReviewsTable = () => {
           <ul className="d-flex">
             {[...Array(5)].map((_, i) => (
               <li key={i}>
-                <i className={`fa-solid fa-star ${i < row.rating ? 'text-warning' : ''}`} />
+                <i
+                  className={`fa-solid fa-star ${i < row.rating ? "text-warning" : ""}`}
+                />
               </li>
             ))}
           </ul>
@@ -218,10 +221,12 @@ const ReviewsTable = () => {
       ),
     },
     {
-      name: 'Action',
+      name: "Action",
       cell: (row) => (
         <div className="between-stock-table action text-end">
-          <a href="#" className="rts-btn btn-primary">Details</a>
+          <a href="#" className="rts-btn btn-primary">
+            Details
+          </a>
         </div>
       ),
       ignoreRowClick: true,
@@ -277,12 +282,18 @@ const ReviewsTable = () => {
 
       <div className="footer-copyright">
         <div className="left">
-          <p>Copyright © 2025 All Right Reserved.</p>
+          <p>Copyright © 2026 All Right Reserved.</p>
         </div>
         <ul>
-          <li><a href="#">Terms</a></li>
-          <li><a href="#">Privacy</a></li>
-          <li><a href="#">Help</a></li>
+          <li>
+            <a href="#">Terms</a>
+          </li>
+          <li>
+            <a href="#">Privacy</a>
+          </li>
+          <li>
+            <a href="#">Help</a>
+          </li>
         </ul>
       </div>
     </div>

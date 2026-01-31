@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import Image from 'next/image';
+import React, { useState } from "react";
+import Image from "next/image";
 
 interface Product {
   id: number;
@@ -12,82 +12,82 @@ interface Product {
 }
 
 const VendorDetailsPage = () => {
-  const [searchTerm, setSearchTerm] = useState('');
-  const [timeRange, setTimeRange] = useState('last Week');
+  const [searchTerm, setSearchTerm] = useState("");
+  const [timeRange, setTimeRange] = useState("last Week");
 
   // Vendor data
   const vendor = {
-    name: 'Food Forulard',
-    status: 'Open',
+    name: "Food Forulard",
+    status: "Open",
     rating: 4.5,
-    address: '530 Post Ct El Dorado Hills California, United States',
-    phone: '+1 (511) 934-8170',
+    address: "530 Post Ct El Dorado Hills California, United States",
+    phone: "+1 (511) 934-8170",
     productsAvailable: 3214,
-    image: '/assets/images-dashboard/vendor/01.svg',
-    bannerImage: '/assets/images-dashboard/vendor/01.png'
+    image: "/assets/images-dashboard/vendor/01.svg",
+    bannerImage: "/assets/images-dashboard/vendor/01.png",
   };
 
   // Product data
   const products: Product[] = [
     {
       id: 1,
-      name: 'Kellin Filid Angelo 100% Di Grano Tenero',
-      image: '/assets/images-dashboard/grocery/08.jpg',
-      time: '9 MINS',
-      packSize: '500g Pack',
-      currentPrice: '$36.00',
-      previousPrice: '$36.00'
+      name: "Kellin Filid Angelo 100% Di Grano Tenero",
+      image: "/assets/images-dashboard/grocery/08.jpg",
+      time: "9 MINS",
+      packSize: "500g Pack",
+      currentPrice: "$36.00",
+      previousPrice: "$36.00",
     },
     {
       id: 2,
-      name: 'Angelo 100% Di Grano Tenero',
-      image: '/assets/images-dashboard/grocery/09.jpg',
-      time: '9 MINS',
-      packSize: '500g Pack',
-      currentPrice: '$36.00',
-      previousPrice: '$36.00'
+      name: "Angelo 100% Di Grano Tenero",
+      image: "/assets/images-dashboard/grocery/09.jpg",
+      time: "9 MINS",
+      packSize: "500g Pack",
+      currentPrice: "$36.00",
+      previousPrice: "$36.00",
     },
     {
       id: 3,
-      name: 'Eellin Filid Angelo 100% Di Grano Tenero',
-      image: '/assets/images-dashboard/grocery/10.jpg',
-      time: '9 MINS',
-      packSize: '500g Pack',
-      currentPrice: '$36.00',
-      previousPrice: '$36.00'
+      name: "Eellin Filid Angelo 100% Di Grano Tenero",
+      image: "/assets/images-dashboard/grocery/10.jpg",
+      time: "9 MINS",
+      packSize: "500g Pack",
+      currentPrice: "$36.00",
+      previousPrice: "$36.00",
     },
     {
       id: 4,
-      name: 'Hellin Filid Angelo 100% Di Grano Tenero',
-      image: '/assets/images-dashboard/grocery/11.jpg',
-      time: '9 MINS',
-      packSize: '500g Pack',
-      currentPrice: '$36.00',
-      previousPrice: '$36.00'
+      name: "Hellin Filid Angelo 100% Di Grano Tenero",
+      image: "/assets/images-dashboard/grocery/11.jpg",
+      time: "9 MINS",
+      packSize: "500g Pack",
+      currentPrice: "$36.00",
+      previousPrice: "$36.00",
     },
     {
       id: 5,
-      name: 'More Filid Angelo 100% Di Grano Tenero',
-      image: '/assets/images-dashboard/grocery/12.jpg',
-      time: '9 MINS',
-      packSize: '500g Pack',
-      currentPrice: '$36.00',
-      previousPrice: '$36.00'
+      name: "More Filid Angelo 100% Di Grano Tenero",
+      image: "/assets/images-dashboard/grocery/12.jpg",
+      time: "9 MINS",
+      packSize: "500g Pack",
+      currentPrice: "$36.00",
+      previousPrice: "$36.00",
     },
     {
       id: 6,
-      name: 'Best Filid Angelo 100% Di Grano Kuller',
-      image: '/assets/images-dashboard/grocery/13.jpg',
-      time: '9 MINS',
-      packSize: '500g Pack',
-      currentPrice: '$36.00',
-      previousPrice: '$36.00'
-    }
+      name: "Best Filid Angelo 100% Di Grano Kuller",
+      image: "/assets/images-dashboard/grocery/13.jpg",
+      time: "9 MINS",
+      packSize: "500g Pack",
+      currentPrice: "$36.00",
+      previousPrice: "$36.00",
+    },
   ];
 
   // Filter products based on search term
-  const filteredProducts = products.filter(product =>
-    product.name.toLowerCase().includes(searchTerm.toLowerCase())
+  const filteredProducts = products.filter((product) =>
+    product.name.toLowerCase().includes(searchTerm.toLowerCase()),
   );
 
   // Render star ratings
@@ -97,7 +97,7 @@ const VendorDetailsPage = () => {
         {[...Array(5)].map((_, i) => (
           <i
             key={i}
-            className={`fa-solid fa-star ${i < Math.floor(rating) ? 'filled' : ''}`}
+            className={`fa-solid fa-star ${i < Math.floor(rating) ? "filled" : ""}`}
           />
         ))}
         <span>({rating.toFixed(2)} out of 5)</span>
@@ -216,7 +216,10 @@ const VendorDetailsPage = () => {
                   value={searchTerm}
                   onChange={handleSearchChange}
                 />
-                <button type="submit" className="rts-btn btn-primary radious-sm with-icon">
+                <button
+                  type="submit"
+                  className="rts-btn btn-primary radious-sm with-icon"
+                >
                   <div className="btn-text">Search</div>
                   <div className="arrow-icon">
                     <i className="fa-light fa-magnifying-glass" />
@@ -241,7 +244,7 @@ const VendorDetailsPage = () => {
 
       {/* Products Grid */}
       <div className="row g-4  mt--40">
-        {filteredProducts.map(product => (
+        {filteredProducts.map((product) => (
           <div key={product.id} className="col-lg-4 col-md-6">
             <div className="single-shopping-card-one tranding-product">
               <a href="#" className="thumbnail-preview">
@@ -254,7 +257,8 @@ const VendorDetailsPage = () => {
               </a>
               <div className="body-content">
                 <div className="time-tag">
-                  <i className="fa-light fa-clock" />{product.time}
+                  <i className="fa-light fa-clock" />
+                  {product.time}
                 </div>
                 <a href="#">
                   <h4 className="title">{product.name}</h4>
@@ -273,12 +277,18 @@ const VendorDetailsPage = () => {
       {/* Footer */}
       <div className="footer-copyright">
         <div className="left">
-          <p>Copyright © 2024 All Right Reserved.</p>
+          <p>Copyright © 2024 to 2026 All Right Reserved.</p>
         </div>
         <ul>
-          <li><a href="#">Terms</a></li>
-          <li><a href="#">Privacy</a></li>
-          <li><a href="#">Help</a></li>
+          <li>
+            <a href="#">Terms</a>
+          </li>
+          <li>
+            <a href="#">Privacy</a>
+          </li>
+          <li>
+            <a href="#">Help</a>
+          </li>
         </ul>
       </div>
     </div>

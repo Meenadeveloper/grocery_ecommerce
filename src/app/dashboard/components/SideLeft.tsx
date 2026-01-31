@@ -1,8 +1,8 @@
 // components/SideLeft.tsx
 "use client";
-import Image from 'next/image';
+import Image from "next/image";
 import SideMenu from "./SideMenu";
-import Link from 'next/link';
+import Link from "next/link";
 
 interface SideLeftProps {
   collapsed: boolean;
@@ -10,10 +10,10 @@ interface SideLeftProps {
 
 function SideLeft({ collapsed }: SideLeftProps) {
   return (
-    <div className={`sidebar_left ${collapsed ? 'collapsed' : ''}`}>
+    <div className={`sidebar_left ${collapsed ? "collapsed" : ""}`}>
       <Link href="/dashboard" className="logo">
         <Image
-          src="/assets/images-dashboard/logo/logo.svg"
+          src="/assets/images-dashboard/logo/allmartlogo.png"
           alt="logo"
           width={131}
           height={32}

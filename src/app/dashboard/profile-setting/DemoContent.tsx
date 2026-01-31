@@ -1,10 +1,10 @@
-"use client"
-import { useState } from 'react';
-import Image from 'next/image';
+"use client";
+import { useState } from "react";
+import Image from "next/image";
 
 function DemoContent() {
   // tab
-  const [activeTab, setActiveTab] = useState<string>('tab1');
+  const [activeTab, setActiveTab] = useState<string>("tab1");
 
   return (
     <div className="profile-setting-area-main-wrapper">
@@ -13,10 +13,10 @@ function DemoContent() {
         <div className="left-setting-area">
           <div className="personal-info">
             <div className="thumbnail-img">
-              <Image 
-                src="/assets/images-dashboard/avatar/02.png" 
-                alt="avatar" 
-                width={80} 
+              <Image
+                src="/assets/images-dashboard/avatar/02.png"
+                alt="avatar"
+                width={80}
                 height={80}
               />
             </div>
@@ -29,69 +29,69 @@ function DemoContent() {
             <ul className="nav nav-tabs" id="myTab" role="tablist">
               <li className="nav-item" role="presentation">
                 <button
-                  onClick={() => setActiveTab('tab1')}
-                  className={`nav-link ${activeTab === 'tab1' ? 'active' : ''}`}
+                  onClick={() => setActiveTab("tab1")}
+                  className={`nav-link ${activeTab === "tab1" ? "active" : ""}`}
                 >
-                  <Image 
-                    src="/assets/images-dashboard/icons/11.svg" 
-                    alt="Edit Profile" 
-                    width={20} 
+                  <Image
+                    src="/assets/images-dashboard/icons/11.svg"
+                    alt="Edit Profile"
+                    width={20}
                     height={20}
                   />
                   Edit Profile
                 </button>
               </li>
               <li className="nav-item" role="presentation">
-                <button 
-                  onClick={() => setActiveTab('tab2')}
-                  className={`nav-link ${activeTab === 'tab2' ? 'active' : ''}`}
+                <button
+                  onClick={() => setActiveTab("tab2")}
+                  className={`nav-link ${activeTab === "tab2" ? "active" : ""}`}
                 >
-                  <Image 
-                    src="/assets/images-dashboard/icons/12.svg" 
-                    alt="Account Settings" 
-                    width={20} 
+                  <Image
+                    src="/assets/images-dashboard/icons/12.svg"
+                    alt="Account Settings"
+                    width={20}
                     height={20}
                   />
                   Account Settings
                 </button>
               </li>
               <li className="nav-item" role="presentation">
-                <button 
-                  onClick={() => setActiveTab('tab3')}
-                  className={`nav-link ${activeTab === 'tab3' ? 'active' : ''}`}
+                <button
+                  onClick={() => setActiveTab("tab3")}
+                  className={`nav-link ${activeTab === "tab3" ? "active" : ""}`}
                 >
-                  <Image 
-                    src="/assets/images-dashboard/icons/13.svg" 
-                    alt="Change Password" 
-                    width={20} 
+                  <Image
+                    src="/assets/images-dashboard/icons/13.svg"
+                    alt="Change Password"
+                    width={20}
                     height={20}
                   />
                   Change Password
                 </button>
               </li>
               <li className="nav-item" role="presentation">
-                <button 
-                  onClick={() => setActiveTab('tab4')}
-                  className={`nav-link ${activeTab === 'tab4' ? 'active' : ''}`}
+                <button
+                  onClick={() => setActiveTab("tab4")}
+                  className={`nav-link ${activeTab === "tab4" ? "active" : ""}`}
                 >
-                  <Image 
-                    src="/assets/images-dashboard/icons/14.svg" 
-                    alt="Social Profile" 
-                    width={20} 
+                  <Image
+                    src="/assets/images-dashboard/icons/14.svg"
+                    alt="Social Profile"
+                    width={20}
                     height={20}
                   />
                   Social Profile
                 </button>
               </li>
               <li className="nav-item" role="presentation">
-                <button 
-                  onClick={() => setActiveTab('tab5')}
-                  className={`nav-link ${activeTab === 'tab5' ? 'active' : ''}`}
+                <button
+                  onClick={() => setActiveTab("tab5")}
+                  className={`nav-link ${activeTab === "tab5" ? "active" : ""}`}
                 >
-                  <Image 
-                    src="/assets/images-dashboard/icons/15.svg" 
-                    alt="Notification" 
-                    width={20} 
+                  <Image
+                    src="/assets/images-dashboard/icons/15.svg"
+                    alt="Notification"
+                    width={20}
                     height={20}
                   />
                   Notification
@@ -103,7 +103,7 @@ function DemoContent() {
         <div className="tab-content-area-user-setting">
           <div className="tab-content" id="myTabContent">
             {/* profile setting start */}
-            {activeTab === 'tab1' && (
+            {activeTab === "tab1" && (
               <div>
                 <div className="inner-content-setting-form">
                   <h3 className="title">Edit Profile</h3>
@@ -120,17 +120,29 @@ function DemoContent() {
                       </div>
                       <div className="single">
                         <label htmlFor="phone">Phone Number</label>
-                        <input id="phone" type="text" placeholder="(589) 8745 8745" />
+                        <input
+                          id="phone"
+                          type="text"
+                          placeholder="(589) 8745 8745"
+                        />
                       </div>
                     </div>
                     <div className="half-input-wrapper">
                       <div className="single">
                         <label htmlFor="email">Email Address</label>
-                        <input id="email" type="text" placeholder="Email Address" />
+                        <input
+                          id="email"
+                          type="text"
+                          placeholder="Email Address"
+                        />
                       </div>
                       <div className="single">
                         <label htmlFor="company">Company</label>
-                        <input id="company" type="text" placeholder="Esther Howard" />
+                        <input
+                          id="company"
+                          type="text"
+                          placeholder="Esther Howard"
+                        />
                       </div>
                     </div>
                     <div className="half-input-wrapper">
@@ -150,7 +162,11 @@ function DemoContent() {
                       </div>
                       <div className="single">
                         <label htmlFor="code">Postal Code</label>
-                        <input id="code" type="text" placeholder="Esther Howard" />
+                        <input
+                          id="code"
+                          type="text"
+                          placeholder="Esther Howard"
+                        />
                       </div>
                     </div>
                     <div className="about-me-area-setting-area">
@@ -175,9 +191,9 @@ function DemoContent() {
                 </div>
               </div>
             )}
-            
+
             {/* account setting start */}
-            {activeTab === 'tab2' && (
+            {activeTab === "tab2" && (
               <div>
                 <div className="account-setting-area-start">
                   <div className="rts--profile-picture-edit">
@@ -194,7 +210,11 @@ function DemoContent() {
                       </div>
                       <div className="button-area">
                         <div className="brows-file-wrapper">
-                          <input name="rts_images1" id="rts_images1" type="file" />
+                          <input
+                            name="rts_images1"
+                            id="rts_images1"
+                            type="file"
+                          />
                           <label htmlFor="rts_images1" title="No File Choosen">
                             <span className="text-center color-white">
                               Upload Profile
@@ -207,9 +227,9 @@ function DemoContent() {
                 </div>
               </div>
             )}
-            
+
             {/* change password area start */}
-            {activeTab === 'tab3' && (
+            {activeTab === "tab3" && (
               <div>
                 <div className="rts-change-password-area">
                   <form action="#" className="change-pass-form">
@@ -232,25 +252,27 @@ function DemoContent() {
                     </div>
                     <div className="single">
                       <label htmlFor="renew">Re-New Password</label>
-                      <input id="renew" type="password" placeholder="Confirm Password" />
+                      <input
+                        id="renew"
+                        type="password"
+                        placeholder="Confirm Password"
+                      />
                     </div>
-                    <button className="rts-btn btn-primary">Save Changes</button>
+                    <button className="rts-btn btn-primary">
+                      Save Changes
+                    </button>
                   </form>
                 </div>
               </div>
             )}
-            
+
             {/* social profile area start */}
-            {activeTab === 'tab4' && (
+            {activeTab === "tab4" && (
               <div>
                 <form action="#" className="social-media-edit-wrapper">
                   <div className="single">
                     <label htmlFor="fb">Facebook URL</label>
-                    <input
-                      id="fb"
-                      type="text"
-                      placeholder="Facebook URL"
-                    />
+                    <input id="fb" type="text" placeholder="Facebook URL" />
                   </div>
                   <div className="single">
                     <label htmlFor="twitter">twitter URL</label>
@@ -258,15 +280,19 @@ function DemoContent() {
                   </div>
                   <div className="single">
                     <label htmlFor="linkedin">Linkedin URL</label>
-                    <input id="linkedin" type="text" placeholder="Linkedin URL" />
+                    <input
+                      id="linkedin"
+                      type="text"
+                      placeholder="Linkedin URL"
+                    />
                   </div>
                   <button className="rts-btn btn-primary">Save Changes</button>
                 </form>
               </div>
             )}
-            
+
             {/* notification area start */}
-            {activeTab === 'tab5' && (
+            {activeTab === "tab5" && (
               <div>
                 <ul className="notification__items">
                   {[2, 2, 3, 4, 5, 7, 7, 8, 9, 10].map((item) => (
@@ -274,7 +300,7 @@ function DemoContent() {
                       <a className="single-link" href="#">
                         <div className="avatar">
                           <Image
-                            src={`/assets/images-dashboard/avatar/user${item % 5 === 0 ? '' : `-${item % 5}`}.svg`}
+                            src={`/assets/images-dashboard/avatar/user${item % 5 === 0 ? "" : `-${item % 5}`}.svg`}
                             alt="User"
                             width={40}
                             height={40}
@@ -299,11 +325,11 @@ function DemoContent() {
           </div>
         </div>
       </div>
-      
+
       {/* bottom footer areas start */}
       <div className="footer-copyright">
         <div className="left">
-          <p>Copyright © 2025 All Right Reserved.</p>
+          <p>Copyright © 2026 All Right Reserved.</p>
         </div>
         <ul>
           <li>

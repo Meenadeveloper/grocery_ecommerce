@@ -1,6 +1,6 @@
 // app/dashboard/page.tsx
 "use client";
-import { useState } from 'react';
+import { useState } from "react";
 import SideLeft from "./components/SideLeft";
 import Header from "./components/Header";
 import DemoContent from "./components/DemoContent";
@@ -13,9 +13,11 @@ export default function Home() {
   };
 
   return (
-    <div className="ekomart_dashboard">
+    <div className="amrithaa_dashboard">
       <SideLeft collapsed={sidebarCollapsed} />
-      <div className={`right-area-body-content ${sidebarCollapsed ? 'collapsed' : ''}`}>
+      <div
+        className={`right-area-body-content ${sidebarCollapsed ? "collapsed" : ""}`}
+      >
         <Header onToggleSidebar={toggleSidebar} />
         <DemoContent />
       </div>

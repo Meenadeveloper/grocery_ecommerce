@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import Image from 'next/image';
+import React, { useState } from "react";
+import Image from "next/image";
 
 interface Vendor {
   id: number;
@@ -7,68 +7,69 @@ interface Vendor {
   image: string;
   rating: number;
   address: string;
-  status: 'Open' | 'Close';
+  status: "Open" | "Close";
 }
 
 const VendorTable = () => {
-  const [searchTerm, setSearchTerm] = useState('');
+  const [searchTerm, setSearchTerm] = useState("");
 
   // Vendor data array
   const vendors: Vendor[] = [
     {
       id: 1,
-      name: 'Food Forulard',
-      image: '/assets/images-dashboard/vendor/01.svg',
+      name: "Food Forulard",
+      image: "/assets/images-dashboard/vendor/01.svg",
       rating: 4.5,
-      address: '530 Post Ct El Dorado Hills California, United States',
-      status: 'Open'
+      address: "530 Post Ct El Dorado Hills California, United States",
+      status: "Open",
     },
     {
       id: 2,
-      name: 'Juice Forulard',
-      image: '/assets/images-dashboard/vendor/02.svg',
+      name: "Juice Forulard",
+      image: "/assets/images-dashboard/vendor/02.svg",
       rating: 4.5,
-      address: '530 Post Ct El Dorado Hills California, United States',
-      status: 'Open'
+      address: "530 Post Ct El Dorado Hills California, United States",
+      status: "Open",
     },
     {
       id: 3,
-      name: 'Food Recipy',
-      image: '/assets/images-dashboard/vendor/03.svg',
+      name: "Food Recipy",
+      image: "/assets/images-dashboard/vendor/03.svg",
       rating: 4.5,
-      address: '530 Post Ct El Dorado Hills California, United States',
-      status: 'Close'
+      address: "530 Post Ct El Dorado Hills California, United States",
+      status: "Close",
     },
     {
       id: 4,
-      name: 'Banana Forulard',
-      image: '/assets/images-dashboard/vendor/04.svg',
+      name: "Banana Forulard",
+      image: "/assets/images-dashboard/vendor/04.svg",
       rating: 4.5,
-      address: '530 Post Ct El Dorado Hills California, United States',
-      status: 'Open'
+      address: "530 Post Ct El Dorado Hills California, United States",
+      status: "Open",
     },
     {
       id: 5,
-      name: 'CoConut Shop',
-      image: '/assets/images-dashboard/vendor/05.svg',
+      name: "CoConut Shop",
+      image: "/assets/images-dashboard/vendor/05.svg",
       rating: 4.5,
-      address: '530 Post Ct El Dorado Hills California, United States',
-      status: 'Open'
+      address: "530 Post Ct El Dorado Hills California, United States",
+      status: "Open",
     },
     {
       id: 6,
-      name: 'jackFruits',
-      image: '/assets/images-dashboard/vendor/06.svg',
+      name: "jackFruits",
+      image: "/assets/images-dashboard/vendor/06.svg",
       rating: 4.5,
-      address: '530 Post Ct El Dorado Hills California, United States',
-      status: 'Open'
-    }
+      address: "530 Post Ct El Dorado Hills California, United States",
+      status: "Open",
+    },
   ];
 
   // Filter vendors based on search term (name or ID)
-  const filteredVendors = vendors.filter(vendor =>
-    vendor.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    vendor.id.toString().includes(searchTerm)
+  const filteredVendors = vendors.filter(
+    (vendor) =>
+      vendor.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      vendor.id.toString().includes(searchTerm),
   );
 
   // Render star ratings
@@ -78,7 +79,7 @@ const VendorTable = () => {
         {[...Array(5)].map((_, i) => (
           <i
             key={i}
-            className={`fa-solid fa-star ${i < Math.floor(rating) ? 'filled' : ''}`}
+            className={`fa-solid fa-star ${i < Math.floor(rating) ? "filled" : ""}`}
           />
         ))}
         <span>{rating.toFixed(2)} out of 5</span>
@@ -102,14 +103,20 @@ const VendorTable = () => {
       {/* Search area */}
       <div className="vendor-grid-top-search-area">
         <h5 className="title">Vendors Card</h5>
-        <form onSubmit={handleSearchSubmit} className="input-area-search-head-vendor">
+        <form
+          onSubmit={handleSearchSubmit}
+          className="input-area-search-head-vendor"
+        >
           <input
             type="text"
             placeholder="Search vendors (by name or ID)..."
             value={searchTerm}
             onChange={handleSearchChange}
           />
-          <button type="submit" className="rts-btn btn-primary radious-sm with-icon">
+          <button
+            type="submit"
+            className="rts-btn btn-primary radious-sm with-icon"
+          >
             <div className="btn-text">Search</div>
             <div className="arrow-icon">
               <i className="fa-light fa-magnifying-glass" />
@@ -135,7 +142,7 @@ const VendorTable = () => {
                 </tr>
               </thead>
               <tbody>
-                {filteredVendors.map(vendor => (
+                {filteredVendors.map((vendor) => (
                   <tr key={vendor.id}>
                     <td width="40%">
                       <a href="#" className="itemside">
@@ -160,7 +167,9 @@ const VendorTable = () => {
                       <p>{vendor.address}</p>
                     </td>
                     <td>
-                      <span className={vendor.status.toLowerCase()}>{vendor.status}</span>
+                      <span className={vendor.status.toLowerCase()}>
+                        {vendor.status}
+                      </span>
                     </td>
                     <td className="text-end">
                       <a href="#" className="rts-btn btn-primary">
@@ -178,12 +187,18 @@ const VendorTable = () => {
       {/* Footer */}
       <div className="footer-copyright">
         <div className="left">
-          <p>Copyright © 2025 All Right Reserved.</p>
+          <p>Copyright © 2026 All Right Reserved.</p>
         </div>
         <ul>
-          <li><a href="#">Terms</a></li>
-          <li><a href="#">Privacy</a></li>
-          <li><a href="#">Help</a></li>
+          <li>
+            <a href="#">Terms</a>
+          </li>
+          <li>
+            <a href="#">Privacy</a>
+          </li>
+          <li>
+            <a href="#">Help</a>
+          </li>
         </ul>
       </div>
     </div>
