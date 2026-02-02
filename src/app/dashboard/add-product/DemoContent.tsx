@@ -236,7 +236,7 @@ const AddProductPage = () => {
 
       <div className="footer-copyright">
         <div className="left">
-          <p>Copyright © 2024 All Right Reserved.</p>
+          <p>Copyright © 2026 All Right Reserved.</p>
         </div>
         <ul>
           <li>

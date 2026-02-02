@@ -45,7 +45,10 @@ const DemoContent: React.FC = () => {
               <h4 className="title">Customer Details</h4>
               <div className="main-customers-details-top">
                 <div className="left">
-                  <img src="/assets/images-dashboard/avatar/03.png" alt="avatar" />
+                  <img
+                    src="/assets/images-dashboard/avatar/03.png"
+                    alt="avatar"
+                  />
                   <div className="information-area">
                     <h4 className="name">Regina Cooper</h4>
                     <span className="designation">Customer</span>
@@ -62,11 +65,11 @@ const DemoContent: React.FC = () => {
                   </div>
                   <div className="short-contact-info">
                     <p className="name">Date</p>
-                    <span>13/16/2024</span>
+                    <span>13/16/2026</span>
                   </div>
                   <div className="short-contact-info">
                     <p className="name">Country</p>
-                    <span>USA(America)</span>
+                    <span>India</span>
                   </div>
                 </div>
               </div>
@@ -124,7 +127,10 @@ const DemoContent: React.FC = () => {
                 <td>
                   <div className="item">
                     <div className="thumbnail">
-                      <img src="/assets/images-dashboard/grocery/15.png" alt="grocery" />
+                      <img
+                        src="/assets/images-dashboard/grocery/15.png"
+                        alt="grocery"
+                      />
                     </div>
                     <div className="discription">
                       <h6 className="title">Quaker Oats Healthy Meal...</h6>
@@ -132,17 +138,20 @@ const DemoContent: React.FC = () => {
                     </div>
                   </div>
                 </td>
-                <td className="text-center">$10.00</td>
+                <td className="text-center">₹10.00</td>
                 <td className="text-center">1</td>
                 <td className="text-right">Red</td>
                 <td className="text-right">M</td>
-                <td className="text-right">$10.00</td>
+                <td className="text-right">₹10.00</td>
               </tr>
               <tr>
                 <td>
                   <div className="item">
                     <div className="thumbnail">
-                      <img src="/assets/images-dashboard/grocery/15.png" alt="grocery" />
+                      <img
+                        src="/assets/images-dashboard/grocery/15.png"
+                        alt="grocery"
+                      />
                     </div>
                     <div className="discription">
                       <h6 className="title">Quaker Oats Healthy Meal...</h6>
@@ -150,29 +159,29 @@ const DemoContent: React.FC = () => {
                     </div>
                   </div>
                 </td>
-                <td className="text-center">$10.00</td>
+                <td className="text-center">₹10.00</td>
                 <td className="text-center">1</td>
                 <td className="text-right">Blue</td>
                 <td className="text-right">L</td>
-                <td className="text-right">$10.00</td>
+                <td className="text-right">₹10.00</td>
               </tr>
               <tr className="b-n">
                 <td colSpan={5} className="text-end f-w-600">
                   SubTotal
                 </td>
-                <td className="text-right">$20.00</td>
+                <td className="text-right">₹20.00</td>
               </tr>
               <tr className="b-n">
                 <td colSpan={5} className="text-end f-w-600">
                   Tax
                 </td>
-                <td className="text-right">$05.00</td>
+                <td className="text-right">₹05.00</td>
               </tr>
               <tr className="b-n">
                 <td colSpan={5} className="text-end f-w-600">
                   Grand Total
                 </td>
-                <td className="text-right f-w-600">$25.00</td>
+                <td className="text-right f-w-600">₹25.00</td>
               </tr>
             </tbody>
           </table>
@@ -182,7 +191,9 @@ const DemoContent: React.FC = () => {
               onClick={handlePrint}
               type="button"
             >
-              <div className="btn-text">Print Now</div>
+              <div className="btn-text" style={{ paddingLeft: "20px" }}>
+                Print Now
+              </div>
               <div className="arrow-icon">
                 <i className="fa-regular fa-print" />
               </div>
@@ -195,7 +206,9 @@ const DemoContent: React.FC = () => {
               download="invoice.pdf"
               className="rts-btn btn-primary radious-sm with-icon"
             >
-              <div className="btn-text">Download</div>
+              <div className="btn-text" style={{ paddingLeft: "20px" }}>
+                Download
+              </div>
               <div className="arrow-icon">
                 <i className="fa-thin fa-download" />
               </div>

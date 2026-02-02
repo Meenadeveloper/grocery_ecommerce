@@ -446,7 +446,7 @@ function HeaderTwo() {
                                   </a>
                                   <div className="number">
                                     1 <i className="fa-regular fa-x" />
-                                    <span>$36.00</span>
+                                    <span>₹36.00</span>
                                   </div>
                                 </div>
                               </div>
@@ -467,7 +467,7 @@ function HeaderTwo() {
                                   </a>
                                   <div className="number">
                                     1 <i className="fa-regular fa-x" />
-                                    <span>$36.00</span>
+                                    <span>₹36.00</span>
                                   </div>
                                 </div>
                               </div>
@@ -488,7 +488,7 @@ function HeaderTwo() {
                                   </a>
                                   <div className="number">
                                     1 <i className="fa-regular fa-x" />
-                                    <span>$36.00</span>
+                                    <span>₹36.00</span>
                                   </div>
                                 </div>
                               </div>
@@ -515,7 +515,7 @@ function HeaderTwo() {
                                   </div>
                                 </div>
                                 <p>
-                                  Spend More <span>$125.00</span> to reach{" "}
+                                  Spend More <span>₹125.00</span> to reach{" "}
                                   <span>Free Shipping</span>
                                 </p>
                               </div>

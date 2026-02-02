@@ -104,7 +104,10 @@ const BlogGridMain: React.FC<BlogGridMainProps> = ({
                 </span>
                 <i className="fa-solid fa-bookmark" />
               </div>
-              <img src={`/assets/images/grocery/${ProductImage}`} alt="grocery" />
+              <img
+                src={`/assets/images/grocery/${ProductImage}`}
+                alt="grocery"
+              />
             </Link>
             <div className="action-share-option">
               <span
@@ -133,7 +136,7 @@ const BlogGridMain: React.FC<BlogGridMainProps> = ({
                 className="single-action openuptip cta-quickview product-details-popup-btn"
                 data-flow="up"
                 title="Quick View"
-                onClick={() => setActiveModal('two')}
+                onClick={() => setActiveModal("two")}
               >
                 <i className="fa-regular fa-eye" />
               </span>
@@ -142,12 +145,14 @@ const BlogGridMain: React.FC<BlogGridMainProps> = ({
 
           <div className="body-content">
             <Link href={`/shop/${Slug}`}>
-              <h4 className="title">{ProductTitle ?? 'How to growing your business'}</h4>
+              <h4 className="title">
+                {ProductTitle ?? "How to growing your business"}
+              </h4>
             </Link>
             <span className="availability">500g Pack</span>
             <div className="price-area">
-              <span className="current">{`$${Price}`}</span>
-              <div className="previous">$36.00</div>
+              <span className="current">{`₹ ${Price}`}</span>
+              <div className="previous">₹ 36.00</div>
             </div>
 
             <div className="cart-counter-action">
@@ -171,18 +176,30 @@ const BlogGridMain: React.FC<BlogGridMainProps> = ({
               <Link
                 href="#"
                 className="rts-btn btn-primary add-to-card radious-sm with-icon"
-                onClick={e => {
+                onClick={(e) => {
                   e.preventDefault();
                   handleAdd();
                   addcart();
                 }}
               >
-                <div className="btn-text">{added ? 'Added' : 'Add'}</div>
+                <div className="btn-text">{added ? "Added" : "Add"}</div>
                 <div className="arrow-icon">
-                  <i className={added ? "fa-solid fa-check" : "fa-regular fa-cart-shopping"} />
+                  <i
+                    className={
+                      added
+                        ? "fa-solid fa-check"
+                        : "fa-regular fa-cart-shopping"
+                    }
+                  />
                 </div>
                 <div className="arrow-icon">
-                  <i className={added ? "fa-solid fa-check" : "fa-regular fa-cart-shopping"} />
+                  <i
+                    className={
+                      added
+                        ? "fa-solid fa-check"
+                        : "fa-regular fa-cart-shopping"
+                    }
+                  />
                 </div>
               </Link>
             </div>
@@ -191,13 +208,13 @@ const BlogGridMain: React.FC<BlogGridMainProps> = ({
       )}
 
       {/* Modals always mounted (does not affect swiper width) */}
-      <CompareModal show={activeModal === 'one'} handleClose={handleClose} />
+      <CompareModal show={activeModal === "one"} handleClose={handleClose} />
       <ProductDetails
-        show={activeModal === 'two'}
+        show={activeModal === "two"}
         handleClose={handleClose}
         productImage={`/assets/images/grocery/${ProductImage}`}
-        productTitle={ProductTitle ?? 'Default Product Title'}
-        productPrice={Price ?? '0'}
+        productTitle={ProductTitle ?? "Default Product Title"}
+        productPrice={Price ?? "0"}
       />
     </>
   );

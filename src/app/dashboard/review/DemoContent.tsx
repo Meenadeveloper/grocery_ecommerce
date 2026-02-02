@@ -243,7 +243,7 @@ const ReviewsTable = () => {
     <div className="body-root-inner">
       <div className="vendor-grid-top-search-area">
         <h5 className="title">Our reviews</h5>
-        <form action="#" className="input-area-search-head-vendor">
+        {/* <form action="#" className="input-area-search-head-vendor">
           <input
             type="text"
             placeholder="Search vendors (by name or ID)..."
@@ -256,7 +256,7 @@ const ReviewsTable = () => {
               <i className="fa-light fa-magnifying-glass" />
             </div>
           </a>
-        </form>
+        </form> */}
       </div>
 
       <div className="vendor-list-main-wrapper">

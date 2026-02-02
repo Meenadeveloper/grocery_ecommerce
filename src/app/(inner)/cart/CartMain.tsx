@@ -1,13 +1,13 @@
-'use client';
-import React, { useState, useEffect } from 'react';
-import { useCart } from '@/components/header/CartContext';
+"use client";
+import React, { useState, useEffect } from "react";
+import { useCart } from "@/components/header/CartContext";
 
 const CartMain = () => {
   const { cartItems, removeFromCart, updateItemQuantity } = useCart();
 
-  const [coupon, setCoupon] = useState('');
+  const [coupon, setCoupon] = useState("");
   const [discount, setDiscount] = useState(0);
-  const [couponMessage, setCouponMessage] = useState('');
+  const [couponMessage, setCouponMessage] = useState("");
   const [subtotal, setSubtotal] = useState(0);
 
   useEffect(() => {
@@ -21,29 +21,29 @@ const CartMain = () => {
 
   const applyCoupon = (e: React.FormEvent) => {
     e.preventDefault();
-    if (coupon === '12345') {
+    if (coupon === "12345") {
       setDiscount(0.25);
-      setCouponMessage('Coupon applied -25% successfully');
-      localStorage.setItem('coupon', coupon);
-      localStorage.setItem('discount', '0.25');
+      setCouponMessage("Coupon applied -25% successfully");
+      localStorage.setItem("coupon", coupon);
+      localStorage.setItem("discount", "0.25");
     } else {
       setDiscount(0);
-      setCouponMessage('Coupon code is incorrect');
-      localStorage.removeItem('coupon');
-      localStorage.removeItem('discount');
+      setCouponMessage("Coupon code is incorrect");
+      localStorage.removeItem("coupon");
+      localStorage.removeItem("discount");
     }
   };
 
   const clearCart = () => {
-    if (typeof window !== 'undefined') {
-      localStorage.removeItem('cartItems');
-      localStorage.removeItem('coupon');
-      localStorage.removeItem('discount');
+    if (typeof window !== "undefined") {
+      localStorage.removeItem("cartItems");
+      localStorage.removeItem("coupon");
+      localStorage.removeItem("discount");
     }
-    setCoupon('');
+    setCoupon("");
     setDiscount(0);
-    setCouponMessage('');
-    cartItems.forEach(item => removeFromCart(item.id));
+    setCouponMessage("");
+    cartItems.forEach((item) => removeFromCart(item.id));
   };
 
   const finalTotal = subtotal - subtotal * discount;
@@ -56,11 +56,17 @@ const CartMain = () => {
           <div className="col-xl-9 col-12 order-2 order-xl-1">
             <div className="cart-area-main-wrapper">
               <div className="cart-top-area-note">
-                <p>Add <span>$59.69</span> to cart and get free shipping</p>
+                <p>
+                  Add <span>₹200.00</span> to cart and get free shipping
+                </p>
                 <div className="bottom-content-deals mt--10">
                   <div className="single-progress-area-incard">
                     <div className="progress">
-                      <div className="progress-bar wow fadeInLeft" role="progressbar" style={{ width: '80%' }} />
+                      <div
+                        className="progress-bar wow fadeInLeft"
+                        role="progressbar"
+                        style={{ width: "80%" }}
+                      />
                     </div>
                   </div>
                 </div>
@@ -69,16 +75,30 @@ const CartMain = () => {
 
             <div className="rts-cart-list-area">
               <div className="single-cart-area-list head">
-                <div className="product-main"><p>Products</p></div>
-                <div className="price"><p>Price</p></div>
-                <div className="quantity"><p>Quantity</p></div>
-                <div className="subtotal"><p>SubTotal</p></div>
+                <div className="product-main">
+                  <p>Products</p>
+                </div>
+                <div className="price">
+                  <p>Price</p>
+                </div>
+                <div className="quantity">
+                  <p>Quantity</p>
+                </div>
+                <div className="subtotal">
+                  <p>SubTotal</p>
+                </div>
               </div>
 
-              {cartItems.map(item => (
-                <div className="single-cart-area-list main item-parent" key={item.id}>
+              {cartItems.map((item) => (
+                <div
+                  className="single-cart-area-list main item-parent"
+                  key={item.id}
+                >
                   <div className="product-main-cart">
-                    <div className="close section-activation" onClick={() => removeFromCart(item.id)}>
+                    <div
+                      className="close section-activation"
+                      onClick={() => removeFromCart(item.id)}
+                    >
                       <i className="fa-regular fa-x" />
                     </div>
                     <div className="thumbnail">
@@ -89,29 +109,41 @@ const CartMain = () => {
                       <span>SKU:SKUZNFER</span>
                     </div>
                   </div>
-                  <div className="price"><p>${item.price.toFixed(2)}</p></div>
+                  <div className="price">
+                    <p>${item.price.toFixed(2)}</p>
+                  </div>
                   <div className="quantity">
                     <div className="quantity-edit">
-                      <input type="text" className="input" value={item.quantity} readOnly />
+                      <input
+                        type="text"
+                        className="input"
+                        value={item.quantity}
+                        readOnly
+                      />
                       <div className="button-wrapper-action">
                         <button
                           className="button minus"
                           onClick={() =>
-                            item.quantity > 1 && updateItemQuantity(item.id, item.quantity - 1)
+                            item.quantity > 1 &&
+                            updateItemQuantity(item.id, item.quantity - 1)
                           }
                         >
                           <i className="fa-regular fa-chevron-down" />
                         </button>
                         <button
                           className="button plus"
-                          onClick={() => updateItemQuantity(item.id, item.quantity + 1)}
+                          onClick={() =>
+                            updateItemQuantity(item.id, item.quantity + 1)
+                          }
                         >
                           <i className="fa-regular fa-chevron-up" />
                         </button>
                       </div>
                     </div>
                   </div>
-                  <div className="subtotal"><p>${(item.price * item.quantity).toFixed(2)}</p></div>
+                  <div className="subtotal">
+                    <p>${(item.price * item.quantity).toFixed(2)}</p>
+                  </div>
                 </div>
               ))}
 
@@ -122,17 +154,31 @@ const CartMain = () => {
                     type="text"
                     placeholder="Coupon Code"
                     value={coupon}
-                    onChange={e => {
+                    onChange={(e) => {
                       setCoupon(e.target.value);
-                      setCouponMessage('');
+                      setCouponMessage("");
                     }}
                   />
-                  <button type="submit" className="rts-btn btn-primary">Apply Coupon</button>
+                  <button type="submit" className="rts-btn btn-primary">
+                    Apply Coupon
+                  </button>
                   {couponMessage && (
-                    <p style={{ color: coupon === '12345' ? 'green' : 'red', marginTop: '8px' }}>{couponMessage}</p>
+                    <p
+                      style={{
+                        color: coupon === "12345" ? "green" : "red",
+                        marginTop: "8px",
+                      }}
+                    >
+                      {couponMessage}
+                    </p>
                   )}
                 </form>
-                <button onClick={clearCart} className="rts-btn btn-primary mr--50">Clear All</button>
+                <button
+                  onClick={clearCart}
+                  className="rts-btn btn-primary mr--50"
+                >
+                  Clear All
+                </button>
               </div>
             </div>
           </div>
@@ -148,10 +194,22 @@ const CartMain = () => {
               <div className="shipping">
                 <span>Shipping</span>
                 <ul>
-                  <li><input type="radio" id="f-option" name="selector" /><label htmlFor="f-option">Free Shipping</label></li>
-                  <li><input type="radio" id="s-option" name="selector" /><label htmlFor="s-option">Flat Rate</label></li>
-                  <li><input type="radio" id="t-option" name="selector" /><label htmlFor="t-option">Local Pickup</label></li>
-                  <li><p>Shipping options will be updated during checkout</p><p className="bold">Calculate Shipping</p></li>
+                  <li>
+                    <input type="radio" id="f-option" name="selector" />
+                    <label htmlFor="f-option">Free Shipping</label>
+                  </li>
+                  <li>
+                    <input type="radio" id="s-option" name="selector" />
+                    <label htmlFor="s-option">Flat Rate</label>
+                  </li>
+                  <li>
+                    <input type="radio" id="t-option" name="selector" />
+                    <label htmlFor="t-option">Local Pickup</label>
+                  </li>
+                  <li>
+                    <p>Shipping options will be updated during checkout</p>
+                    <p className="bold">Calculate Shipping</p>
+                  </li>
                 </ul>
               </div>
               <div className="bottom">
@@ -160,12 +218,13 @@ const CartMain = () => {
                   <h6 className="price">${finalTotal.toFixed(2)}</h6>
                 </div>
                 <div className="button-area">
-                  <button className="rts-btn btn-primary">Proceed To Checkout</button>
+                  <button className="rts-btn btn-primary">
+                    Proceed To Checkout
+                  </button>
                 </div>
               </div>
             </div>
           </div>
-
         </div>
       </div>
     </div>

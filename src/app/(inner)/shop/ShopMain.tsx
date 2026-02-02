@@ -143,19 +143,13 @@ const BlogGridMain: React.FC<BlogGridMainProps> = ({
         <span className="availability">500g Pack</span>
 
         <div className="price-area">
-          <span className="current">{`$${Price}`}</span>
-          <div className="previous">$36.00</div>
+          <span className="current">{`₹${Price}`}</span>
+          <div className="previous">₹36.00</div>
         </div>
 
-    
         <div className="cart-counter-action">
           <div className="quantity-edit">
-            <input
-              type="text"
-              className="input"
-              value={quantity}
-              readOnly
-            />
+            <input type="text" className="input" value={quantity} readOnly />
 
             <div className="button-wrapper-action">
               <button className="button minus" onClick={decreaseQty}>

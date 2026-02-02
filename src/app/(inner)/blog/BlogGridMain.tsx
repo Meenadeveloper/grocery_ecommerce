@@ -22,7 +22,7 @@ const BlogGridMain: React.FC<BlogGridMainProps> = ({
                 <div className="tag-area">
                     <div className="single">
                         <i className="fa-light fa-clock" />
-                        <span>15 Sep, 2023</span>
+                        <span>28 Jan, 2026</span>
                     </div>
                     <div className="single">
                         <i className="fa-light fa-folder" />

@@ -13,7 +13,7 @@ export default function Home() {
   };
 
   return (
-    <div className="amrithaa_dashboard">
+    <div className="ekomart_dashboard">
       <SideLeft collapsed={sidebarCollapsed} />
       <div
         className={`right-area-body-content ${sidebarCollapsed ? "collapsed" : ""}`}

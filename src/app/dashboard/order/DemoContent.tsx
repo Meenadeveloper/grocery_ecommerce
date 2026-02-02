@@ -207,7 +207,7 @@ const OverviewTable: React.FC = () => {
       </div>
       <div className="footer-copyright">
         <div className="left">
-          <p>Copyright © 2025 All Right Reserved.</p>
+          <p>Copyright © 2026 All Right Reserved.</p>
         </div>
         <ul>
           <li>

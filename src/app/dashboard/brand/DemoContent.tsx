@@ -7,7 +7,7 @@ function DemoContent() {
   {/* vendor-grid-top-area start */}
   <div className="vendor-grid-top-search-area">
     <h5 className="title">Our Brand</h5>
-    <form action="#" className="input-area-search-head-vendor">
+    {/* <form action="#" className="input-area-search-head-vendor">
       <input type="text" placeholder="Search vendors (by name or ID)..." />
       <a href="#" className="rts-btn btn-primary radious-sm with-icon">
         <div className="btn-text">Search</div>
@@ -18,7 +18,7 @@ function DemoContent() {
           <i className="fa-light fa-magnifying-glass" />
         </div>
       </a>
-    </form>
+    </form> */}
   </div>
   {/* vendor-grid-top-area end */}
   <div className="vendor-list-main-wrapper">

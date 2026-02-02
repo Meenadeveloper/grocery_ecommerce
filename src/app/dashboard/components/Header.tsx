@@ -45,12 +45,12 @@ export default function Header({ onToggleSidebar }: HeaderProps) {
 
   const languages = ["English", "Bangla", "Hindi", "Latin"];
   const profileMenu = [
-    { icon: "fa-light fa-user", text: "Profile Setting", href: "profile-setting.html" },
+    { icon: "fa-light fa-user", text: "Profile Setting", href: "#" },
     { icon: "fa-regular fa-gear", text: "Settings", href: "#" },
   ];
 
   return (
-    <header className="header-one">
+    <header className="header-one" style={{ display: "flex" }}>
       <div className="headerleft">
         <div className="collups-show-icon" onClick={onToggleSidebar}>
           <Image
@@ -62,10 +62,10 @@ export default function Header({ onToggleSidebar }: HeaderProps) {
           <i className="fa-light fa-arrow-right" />
         </div>
       </div>
-      <div className="header-right">
+      <div className="header-right" style={{ display: "flex" }}>
         <div className="action-interactive-area__header" ref={popupRef}>
           {/* Search */}
-          <div
+          {/* <div
             className={`single_action__haeader search-action ${activePopup === 'search' ? 'active' : ''}`}
             onClick={() => togglePopup('search')}
           >
@@ -89,10 +89,10 @@ export default function Header({ onToggleSidebar }: HeaderProps) {
               />
               <i className="fa-solid fa-magnifying-glass" />
             </div>
-          </div>
+          </div> */}
 
           {/* Notification */}
-          <div
+          {/* <div
             className={`single_action__haeader notification ${activePopup === 'notification' ? 'active' : ''}`}
             onClick={() => togglePopup('notification')}
           >
@@ -226,10 +226,10 @@ export default function Header({ onToggleSidebar }: HeaderProps) {
                 </ul>
               </div>
             </div>
-          </div>
+          </div> */}
 
           {/* Language Selector */}
-          <div
+          {/* <div
             className={`single_action__haeader language user_avatar__information ${activePopup === 'language' ? 'active' : ''}`}
             onClick={() => togglePopup('language')}
           >
@@ -253,12 +253,12 @@ export default function Header({ onToggleSidebar }: HeaderProps) {
                 ))}
               </ul>
             </div>
-          </div>
+          </div> */}
 
           {/* User Profile */}
           <div
-            className={`single_action__haeader user_avatar__information ${activePopup === 'profile' ? 'active' : ''}`}
-            onClick={() => togglePopup('profile')}
+            className={`single_action__haeader user_avatar__information ${activePopup === "profile" ? "active" : ""}`}
+            onClick={() => togglePopup("profile")}
           >
             <div className="avatar">
               <Image
@@ -270,7 +270,7 @@ export default function Header({ onToggleSidebar }: HeaderProps) {
             </div>
             <div
               className="user_information_main_wrapper slide-down__click"
-              style={{ display: activePopup === 'profile' ? 'block' : 'none' }}
+              style={{ display: activePopup === "profile" ? "block" : "none" }}
             >
               <div className="user_header">
                 <div className="main-avatar">
@@ -299,7 +299,10 @@ export default function Header({ onToggleSidebar }: HeaderProps) {
                 </ul>
               </div>
               <div className="popup-footer-btn">
-                <a href="#" className="geex-content__header__popup__footer__link">
+                <a
+                  href="#"
+                  className="geex-content__header__popup__footer__link"
+                >
                   Logout
                   <i className="fa-light fa-arrow-right" />
                 </a>

@@ -51,7 +51,7 @@ export default function Home() {
                                             placeholder="Search vendors (by name or ID)..."
                                         />
                                         <Link href="/shop" className="rts-btn btn-primary radious-sm with-icon">
-                                            <div className="btn-text">Search</div>
+                                            <div className="btn-text" style={{paddingLeft:"20px !important"}} >Search</div>
                                             <div className="arrow-icon">
                                                 <i className="fa-light fa-magnifying-glass" />
                                             </div>
@@ -211,7 +211,7 @@ export default function Home() {
                                                             href="/shop"
                                                             className="rts-btn btn-primary radious-sm with-icon"
                                                         >
-                                                            <div className="btn-text">Visit Store</div>
+                                                            <div className="btn-text" style={{paddingLeft:"20px"}} >Visit Store</div>
                                                             <div className="arrow-icon">
                                                                 <i className="fa-light fa-arrow-right" />
                                                             </div>
@@ -251,7 +251,7 @@ export default function Home() {
                                                             href="/shop"
                                                             className="rts-btn btn-primary radious-sm with-icon"
                                                         >
-                                                            <div className="btn-text">Visit Store</div>
+                                                            <div className="btn-text" style={{paddingLeft:"20px"}}>Visit Store</div>
                                                             <div className="arrow-icon">
                                                                 <i className="fa-light fa-arrow-right" />
                                                             </div>
@@ -291,7 +291,7 @@ export default function Home() {
                                                             href="/shop"
                                                             className="rts-btn btn-primary radious-sm with-icon"
                                                         >
-                                                            <div className="btn-text">Visit Store</div>
+                                                            <div className="btn-text" style={{paddingLeft:"20px"}}>Visit Store</div>
                                                             <div className="arrow-icon">
                                                                 <i className="fa-light fa-arrow-right" />
                                                             </div>
@@ -331,7 +331,7 @@ export default function Home() {
                                                             href="/shop"
                                                             className="rts-btn btn-primary radious-sm with-icon"
                                                         >
-                                                            <div className="btn-text">Visit Store</div>
+                                                            <div className="btn-text" style={{paddingLeft:"20px"}}>Visit Store</div>
                                                             <div className="arrow-icon">
                                                                 <i className="fa-light fa-arrow-right" />
                                                             </div>
@@ -371,7 +371,7 @@ export default function Home() {
                                                             href="/shop"
                                                             className="rts-btn btn-primary radious-sm with-icon"
                                                         >
-                                                            <div className="btn-text">Visit Store</div>
+                                                            <div className="btn-text" style={{paddingLeft:"20px"}}>Visit Store</div>
                                                             <div className="arrow-icon">
                                                                 <i className="fa-light fa-arrow-right" />
                                                             </div>
@@ -411,7 +411,7 @@ export default function Home() {
                                                             href="/shop"
                                                             className="rts-btn btn-primary radious-sm with-icon"
                                                         >
-                                                            <div className="btn-text">Visit Store</div>
+                                                            <div className="btn-text" style={{paddingLeft:"20px"}}>Visit Store</div>
                                                             <div className="arrow-icon">
                                                                 <i className="fa-light fa-arrow-right" />
                                                             </div>
@@ -451,7 +451,7 @@ export default function Home() {
                                                             href="/shop"
                                                             className="rts-btn btn-primary radious-sm with-icon"
                                                         >
-                                                            <div className="btn-text">Visit Store</div>
+                                                            <div className="btn-text" style={{paddingLeft:"20px"}}>Visit Store</div>
                                                             <div className="arrow-icon">
                                                                 <i className="fa-light fa-arrow-right" />
                                                             </div>
@@ -491,7 +491,7 @@ export default function Home() {
                                                             href="/shop"
                                                             className="rts-btn btn-primary radious-sm with-icon"
                                                         >
-                                                            <div className="btn-text">Visit Store</div>
+                                                            <div className="btn-text" style={{paddingLeft:"20px"}}>Visit Store</div>
                                                             <div className="arrow-icon">
                                                                 <i className="fa-light fa-arrow-right" />
                                                             </div>
@@ -538,7 +538,7 @@ export default function Home() {
                                                                 href="/shop"
                                                                 className="rts-btn btn-primary radious-sm with-icon"
                                                             >
-                                                                <div className="btn-text">Visit Store</div>
+                                                                <div className="btn-text" style={{paddingLeft:"20px"}}>Visit Store</div>
                                                                 <div className="arrow-icon">
                                                                     <i className="fa-light fa-arrow-right" />
                                                                 </div>
@@ -580,7 +580,7 @@ export default function Home() {
                                                                 href="/shop"
                                                                 className="rts-btn btn-primary radious-sm with-icon"
                                                             >
-                                                                <div className="btn-text">Visit Store</div>
+                                                                <div className="btn-text" style={{paddingLeft:"20px"}}>Visit Store</div>
                                                                 <div className="arrow-icon">
                                                                     <i className="fa-light fa-arrow-right" />
                                                                 </div>
@@ -622,7 +622,7 @@ export default function Home() {
                                                                 href="/shop"
                                                                 className="rts-btn btn-primary radious-sm with-icon"
                                                             >
-                                                                <div className="btn-text">Visit Store</div>
+                                                                <div className="btn-text" style={{paddingLeft:"20px"}}>Visit Store</div>
                                                                 <div className="arrow-icon">
                                                                     <i className="fa-light fa-arrow-right" />
                                                                 </div>
@@ -664,7 +664,7 @@ export default function Home() {
                                                                 href="/shop"
                                                                 className="rts-btn btn-primary radious-sm with-icon"
                                                             >
-                                                                <div className="btn-text">Visit Store</div>
+                                                                <div className="btn-text" style={{paddingLeft:"20px"}}>Visit Store</div>
                                                                 <div className="arrow-icon">
                                                                     <i className="fa-light fa-arrow-right" />
                                                                 </div>
@@ -706,7 +706,7 @@ export default function Home() {
                                                                 href="/shop"
                                                                 className="rts-btn btn-primary radious-sm with-icon"
                                                             >
-                                                                <div className="btn-text">Visit Store</div>
+                                                                <div className="btn-text" style={{paddingLeft:"20px"}}>Visit Store</div>
                                                                 <div className="arrow-icon">
                                                                     <i className="fa-light fa-arrow-right" />
                                                                 </div>
@@ -748,7 +748,7 @@ export default function Home() {
                                                                 href="/shop"
                                                                 className="rts-btn btn-primary radious-sm with-icon"
                                                             >
-                                                                <div className="btn-text">Visit Store</div>
+                                                                <div className="btn-text" style={{paddingLeft:"20px"}}>Visit Store</div>
                                                                 <div className="arrow-icon">
                                                                     <i className="fa-light fa-arrow-right" />
                                                                 </div>
@@ -790,7 +790,7 @@ export default function Home() {
                                                                 href="/shop"
                                                                 className="rts-btn btn-primary radious-sm with-icon"
                                                             >
-                                                                <div className="btn-text">Visit Store</div>
+                                                                <div className="btn-text" style={{paddingLeft:"20px"}}>Visit Store</div>
                                                                 <div className="arrow-icon">
                                                                     <i className="fa-light fa-arrow-right" />
                                                                 </div>
@@ -833,7 +833,7 @@ export default function Home() {
                                                                 href="/shop"
                                                                 className="rts-btn btn-primary radious-sm with-icon"
                                                             >
-                                                                <div className="btn-text">Visit Store</div>
+                                                                <div className="btn-text" style={{paddingLeft:"20px"}}>Visit Store</div>
                                                                 <div className="arrow-icon">
                                                                     <i className="fa-light fa-arrow-right" />
                                                                 </div>

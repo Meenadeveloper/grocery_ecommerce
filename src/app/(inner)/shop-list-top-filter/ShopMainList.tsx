@@ -1,8 +1,8 @@
-"use client"
-import React, { useState } from 'react';
+"use client";
+import React, { useState } from "react";
 import { useCart } from "@/components/header/CartContext";
-import { toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 interface BlogGridMainProps {
   Slug: string;
@@ -17,11 +17,10 @@ const BlogGridMain: React.FC<BlogGridMainProps> = ({
   ProductTitle,
   Price,
 }) => {
-
   // 🔥 FIXED QUANTITY (React State Only)
   const [qty, setQty] = useState(1);
-  const increaseQty = () => setQty(prev => prev + 1);
-  const decreaseQty = () => setQty(prev => (prev > 1 ? prev - 1 : 1));
+  const increaseQty = () => setQty((prev) => prev + 1);
+  const decreaseQty = () => setQty((prev) => (prev > 1 ? prev - 1 : 1));
 
   // cart item
   const { addToCart } = useCart();
@@ -30,12 +29,12 @@ const BlogGridMain: React.FC<BlogGridMainProps> = ({
     addToCart({
       id: Date.now(),
       image: `/assets/images/grocery/${ProductImage}`,
-      title: ProductTitle ?? 'Default Product Title',
-      price: parseFloat(Price ?? '0'),
+      title: ProductTitle ?? "Default Product Title",
+      price: parseFloat(Price ?? "0"),
       quantity: qty, // 👈 FIXED
       active: true,
     });
-    toast('Successfully Add To Cart !');
+    toast("Successfully Add To Cart !");
   };
 
   return (
@@ -54,14 +53,16 @@ const BlogGridMain: React.FC<BlogGridMainProps> = ({
         <div className="body-content">
           <div className="title-area-left">
             <a href={`/shop/${Slug}`}>
-              <h4 className="title">{ProductTitle ?? 'How to growing your business'}</h4>
+              <h4 className="title">
+                {ProductTitle ?? "How to growing your business"}
+              </h4>
             </a>
 
             <span className="availability">500g Pack</span>
 
             <div className="price-area">
               <span className="current">${Price}</span>
-              <div className="previous">$36.00</div>
+              <div className="previous">₹36.00</div>
             </div>
 
             <div className="cart-counter-action">
@@ -102,11 +103,26 @@ const BlogGridMain: React.FC<BlogGridMainProps> = ({
           <div className="natural-value">
             <h6 className="title">Nutritional Values</h6>
 
-            <div className="single"><span>Energy(kcal):</span><span>211</span></div>
-            <div className="single"><span>Protein(g):</span><span>211</span></div>
-            <div className="single"><span>magnetiam(kcal):</span><span>211</span></div>
-            <div className="single"><span>Calory(kcal):</span><span>211</span></div>
-            <div className="single"><span>Vitamine(kcal):</span><span>211</span></div>
+            <div className="single">
+              <span>Energy(kcal):</span>
+              <span>211</span>
+            </div>
+            <div className="single">
+              <span>Protein(g):</span>
+              <span>211</span>
+            </div>
+            <div className="single">
+              <span>magnetiam(kcal):</span>
+              <span>211</span>
+            </div>
+            <div className="single">
+              <span>Calory(kcal):</span>
+              <span>211</span>
+            </div>
+            <div className="single">
+              <span>Vitamine(kcal):</span>
+              <span>211</span>
+            </div>
           </div>
         </div>
       </div>

@@ -184,8 +184,9 @@ function FooterOne() {
               <div className="col-lg-12">
                 <div className="copyright-between-1">
                   <p className="disc">
-                    Copyright © 2026 <a href="#">©Amrithaa</a>. All rights
-                    reserved.
+                    Copyright © 2026{" "}
+                    <a href="https://www.amrithaa.com/">Amrithaa</a>. All
+                    rights reserved.
                   </p>
                   <a href="#" className="playstore-app-area">
                     <span>Download App</span>

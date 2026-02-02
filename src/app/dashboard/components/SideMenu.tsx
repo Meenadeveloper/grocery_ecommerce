@@ -14,10 +14,8 @@ const menuItems: MenuItem[] = [
   {
     title: "Dashboard",
     icon: "/assets/images-dashboard/icons/01.svg",
-    children: [
-      { title: "Main Demo", href: "/dashboard" },
-      { title: "Coming Soon", href: "#" },
-    ],
+
+    href: "/dashboard",
   },
   {
     title: "Order",
@@ -40,16 +38,12 @@ const menuItems: MenuItem[] = [
   //   title: "Add Product",
   //   icon: "/assets/images-dashboard/icons/03.svg",
   // },
-  {
-    title: "Vendor",
-    icon: "/assets/images-dashboard/icons/04.svg",
-    children: [
-      { title: "Vendor Grid", href: "/dashboard/vendor-grid" },
-      { title: "Vendor List", href: "/dashboard/vendor-list" },
-      { title: "Vendor Details", href: "/dashboard/vendor-details" },
-      { title: "Create Vendors", href: "/dashboard/create-vendors" },
-    ],
-  },
+  // {
+  //   title: "Vendor",
+  //   icon: "/assets/images-dashboard/icons/04.svg",
+  //   href: "/dashboard/vendor-grid",
+   
+  // },
   {
     title: "Transactions",
     icon: "/assets/images-dashboard/icons/06.svg",

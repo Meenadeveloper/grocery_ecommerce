@@ -144,7 +144,9 @@ function ShopContent() {
               <div className="navigator-breadcrumb-wrapper">
                 <Link href="/">Home</Link>
                 <i className="fa-regular fa-chevron-right" />
-                <a className="current" href="#">Shop</a>
+                <a className="current" href="#">
+                  Shop
+                </a>
               </div>
             </div>
           </div>
@@ -200,11 +202,13 @@ function ShopContent() {
                         min={0}
                         max={150}
                         value={maxPrice}
-                        onChange={(e) => setMaxPrice(parseInt(e.target.value, 10))}
+                        onChange={(e) =>
+                          setMaxPrice(parseInt(e.target.value, 10))
+                        }
                       />
                       <div className="filter-value-min-max">
                         <span>
-                          Price: ${minPrice} — ${maxPrice}
+                          Price: ₹{minPrice} — ₹{maxPrice}
                         </span>
                         <button type="submit" className="rts-btn btn-primary">
                           Filter
@@ -267,27 +271,91 @@ function ShopContent() {
                       <ul className="nav nav-tabs" id="myTab" role="tablist">
                         <li className="nav-item" role="presentation">
                           <button
-                            onClick={() => setActiveTab('tab1')}
-                            className={`nav-link single-button ${activeTab === 'tab1' ? 'active' : ''}`}
+                            onClick={() => setActiveTab("tab1")}
+                            className={`nav-link single-button ${activeTab === "tab1" ? "active" : ""}`}
                           >
-                            <svg width={16} height={16} viewBox="0 0 16 16" fill="none">
-                              <rect x="0.5" y="0.5" width={6} height={6} rx="1.5" stroke="#2C3B28" />
-                              <rect x="0.5" y="9.5" width={6} height={6} rx="1.5" stroke="#2C3B28" />
-                              <rect x="9.5" y="0.5" width={6} height={6} rx="1.5" stroke="#2C3B28" />
-                              <rect x="9.5" y="9.5" width={6} height={6} rx="1.5" stroke="#2C3B28" />
+                            <svg
+                              width={16}
+                              height={16}
+                              viewBox="0 0 16 16"
+                              fill="none"
+                            >
+                              <rect
+                                x="0.5"
+                                y="0.5"
+                                width={6}
+                                height={6}
+                                rx="1.5"
+                                stroke="#2C3B28"
+                              />
+                              <rect
+                                x="0.5"
+                                y="9.5"
+                                width={6}
+                                height={6}
+                                rx="1.5"
+                                stroke="#2C3B28"
+                              />
+                              <rect
+                                x="9.5"
+                                y="0.5"
+                                width={6}
+                                height={6}
+                                rx="1.5"
+                                stroke="#2C3B28"
+                              />
+                              <rect
+                                x="9.5"
+                                y="9.5"
+                                width={6}
+                                height={6}
+                                rx="1.5"
+                                stroke="#2C3B28"
+                              />
                             </svg>
                           </button>
                         </li>
                         <li className="nav-item" role="presentation">
                           <button
-                            onClick={() => setActiveTab('tab2')}
-                            className={`nav-link single-button ${activeTab === 'tab2' ? 'active' : ''}`}
+                            onClick={() => setActiveTab("tab2")}
+                            className={`nav-link single-button ${activeTab === "tab2" ? "active" : ""}`}
                           >
-                            <svg width={16} height={16} viewBox="0 0 16 16" fill="none">
-                              <rect x="0.5" y="0.5" width={6} height={6} rx="1.5" stroke="#2C3C28" />
-                              <rect x="0.5" y="9.5" width={6} height={6} rx="1.5" stroke="#2C3C28" />
-                              <rect x={9} y={3} width={7} height={1} fill="#2C3C28" />
-                              <rect x={9} y={12} width={7} height={1} fill="#2C3C28" />
+                            <svg
+                              width={16}
+                              height={16}
+                              viewBox="0 0 16 16"
+                              fill="none"
+                            >
+                              <rect
+                                x="0.5"
+                                y="0.5"
+                                width={6}
+                                height={6}
+                                rx="1.5"
+                                stroke="#2C3C28"
+                              />
+                              <rect
+                                x="0.5"
+                                y="9.5"
+                                width={6}
+                                height={6}
+                                rx="1.5"
+                                stroke="#2C3C28"
+                              />
+                              <rect
+                                x={9}
+                                y={3}
+                                width={7}
+                                height={1}
+                                fill="#2C3C28"
+                              />
+                              <rect
+                                x={9}
+                                y={12}
+                                width={7}
+                                height={1}
+                                fill="#2C3C28"
+                              />
                             </svg>
                           </button>
                         </li>
@@ -300,21 +368,26 @@ function ShopContent() {
               {/* Grid or List view */}
               <div className="tab-content" id="myTabContent">
                 <div className="product-area-wrapper-shopgrid-list mt--20 tab-pane fade show active">
-                  {activeTab === 'tab1' && (
+                  {activeTab === "tab1" && (
                     <div className="row g-4">
                       {filteredProducts.length > 0 ? (
-                        filteredProducts.map((post: PostType, index: number) => (
-                          <div key={index} className="col-lg-20 col-lg-4 col-md-6 col-sm-6 col-12">
-                            <div className="single-shopping-card-one">
-                              <ShopMain
-                                Slug={post.slug}
-                                ProductImage={post.image}
-                                ProductTitle={post.title}
-                                Price={post.price}
-                              />
+                        filteredProducts.map(
+                          (post: PostType, index: number) => (
+                            <div
+                              key={index}
+                              className="col-lg-3 col-md-4 col-sm-6 col-12"
+                            >
+                              <div className="single-shopping-card-one">
+                                <ShopMain
+                                  Slug={post.slug}
+                                  ProductImage={post.image}
+                                  ProductTitle={post.title}
+                                  Price={post.price}
+                                />
+                              </div>
                             </div>
-                          </div>
-                        ))
+                          ),
+                        )
                       ) : (
                         <div className="col-12 text-center py-5">
                           <h2>No Product Found</h2>
@@ -325,21 +398,23 @@ function ShopContent() {
                 </div>
 
                 <div className="product-area-wrapper-shopgrid-list with-list mt--20">
-                  {activeTab === 'tab2' && (
+                  {activeTab === "tab2" && (
                     <div className="row">
                       {filteredProducts.length > 0 ? (
-                        filteredProducts.map((post: PostType, index: number) => (
-                          <div key={index} className="col-lg-6">
-                            <div className="single-shopping-card-one discount-offer">
-                              <ShopMainList
-                                Slug={post.slug}
-                                ProductImage={post.image}
-                                ProductTitle={post.title}
-                                Price={post.price}
-                              />
+                        filteredProducts.map(
+                          (post: PostType, index: number) => (
+                            <div key={index} className="col-lg-6">
+                              <div className="single-shopping-card-one discount-offer">
+                                <ShopMainList
+                                  Slug={post.slug}
+                                  ProductImage={post.image}
+                                  ProductTitle={post.title}
+                                  Price={post.price}
+                                />
+                              </div>
                             </div>
-                          </div>
-                        ))
+                          ),
+                        )
                       ) : (
                         <div className="col-12 text-center py-5">
                           <h2>No Product Found</h2>

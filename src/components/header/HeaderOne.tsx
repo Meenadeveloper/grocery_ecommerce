@@ -199,7 +199,7 @@ function HeaderOne() {
         </div>
 
         {/* mid bar */}
-        <div className="header-mid-one-wrapper">
+        {/* <div className="header-mid-one-wrapper">
           <div className="container">
             <div className="row">
               <div className="col-lg-12">
@@ -271,7 +271,7 @@ function HeaderOne() {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
 
         {/* logo + search */}
         <div className="search-header-area-main">

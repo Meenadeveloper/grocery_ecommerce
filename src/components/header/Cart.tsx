@@ -26,20 +26,28 @@ const CartDropdown: React.FC = () => {
 
       <div className="category-sub-menu card-number-show">
         <h5 className="shopping-cart-number">
-          Shopping Cart ({activeItems.length.toString().padStart(2, '0')})
+          Shopping Cart ({activeItems.length.toString().padStart(2, "0")})
         </h5>
 
         {activeItems.map((item) => (
           <div key={item.id} className="cart-item-1 border-top">
             <div className="img-name">
-              <div className="close section-activation" onClick={() => removeFromCart(item.id)}>
+              <div
+                className="close section-activation"
+                onClick={() => removeFromCart(item.id)}
+              >
                 <i className="fa-regular fa-x" />
               </div>
               <div className="thumbanil">
-                <Image src={item.image} alt={item.title} width={60} height={60} />
+                <Image
+                  src={item.image}
+                  alt={item.title}
+                  width={60}
+                  height={60}
+                />
               </div>
               <div className="details">
-                <Link href='/shop/details-profitable-business-makes-your-profit'>
+                <Link href="/shop/details-profitable-business-makes-your-profit">
                   <h5 className="title">{item.title}</h5>
                 </Link>
                 <div className="number">
@@ -55,7 +63,7 @@ const CartDropdown: React.FC = () => {
           <div className="bottom-content-deals mt--10">
             <div className="top">
               <span>Sub Total:</span>
-              <span className="number-c">${total.toFixed(2)}</span>
+              <span className="number-c">₹{total.toFixed(2)}</span>
             </div>
             <div className="single-progress-area-incard">
               <div className="progress">
@@ -70,7 +78,7 @@ const CartDropdown: React.FC = () => {
             </div>
             {total < freeShippingThreshold && (
               <p>
-                Spend More <span>${remaining.toFixed(2)}</span> to reach{' '}
+                Spend More <span>₹{remaining.toFixed(2)}</span> to reach{" "}
                 <span>Free Shipping</span>
               </p>
             )}

@@ -133,7 +133,7 @@ function FeatureProduct() {
                                             480: { slidesPerView: 3, spaceBetween: 30 },
                                             640: { slidesPerView: 3, spaceBetween: 30 },
                                             840: { slidesPerView: 4, spaceBetween: 30 },
-                                            1140: { slidesPerView: 6, spaceBetween: 30 },
+                                            1140: { slidesPerView: 5, spaceBetween: 30 },
                                         }}
                                     >
                                         <SwiperSlide>
